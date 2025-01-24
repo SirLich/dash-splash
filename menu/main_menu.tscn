@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1bwtl17un42a"]
+
+[ext_resource type="Script" path="res://menu/button.gd" id="1_lfo8a"]
+[ext_resource type="Texture2D" uid="uid://b1idvagrr2pus" path="res://assets/menu/teepublic_lethal-company-logo-texturized-teepublic_1705489119.webp" id="2_bxmfx"]
+[ext_resource type="Texture2D" uid="uid://y1x54fgl55sl" path="res://assets/menu/background_menu.jpg" id="3_fapwp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 394.0
+offset_right = 697.0
+offset_bottom = 523.0
+text = "PLAY"
+script = ExtResource("1_lfo8a")
+
+[node name="TeepublicLethal-company-logo-texturized-teepublic1705489119" type="Sprite2D" parent="."]
+position = Vector2(585, 207)
+scale = Vector2(0.831746, 0.28254)
+texture = ExtResource("2_bxmfx")
+
+[node name="BackgroundMenu" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(577.25, 323.5)
+scale = Vector2(1.79082, 1.79722)
+texture = ExtResource("3_fapwp")
