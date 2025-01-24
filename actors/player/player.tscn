@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8genfsw8ql8t"]
+
+[ext_resource type="Texture2D" uid="uid://lv3cdlp3nkx4" path="res://icon.svg" id="1_cxqmx"]
+[ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_nh811"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
+
+[sub_resource type="Resource" id="Resource_mosgt"]
+script = ExtResource("4_uamp4")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_x5orn")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_cxqmx")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("3_nh811")
+tween_resource = SubResource("Resource_mosgt")
