@@ -46,3 +46,4 @@ boost={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.263296, 0.583839, 0.625434, 1)

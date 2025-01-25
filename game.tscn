@@ -10,6 +10,7 @@ position = Vector2(205, 214)
 
 [node name="Bubble2" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(679, 19)
+initial_size = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
 position = Vector2(189, -28)
