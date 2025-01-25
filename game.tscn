@@ -5,7 +5,7 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_cvtyn")]
-
 [node name="Bubble" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(205, 214)
+
+[node name="Player" parent="." instance=ExtResource("1_cvtyn")]

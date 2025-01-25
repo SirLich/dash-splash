@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8genfsw8ql8t"]
+[gd_scene load_steps=8 format=3 uid="uid://b8genfsw8ql8t"]
 
 [ext_resource type="Texture2D" uid="uid://lv3cdlp3nkx4" path="res://icon.svg" id="1_cxqmx"]
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
@@ -11,6 +11,9 @@ script = ExtResource("4_uamp4")
 duration = 1.0
 transition = 0
 ease = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5o8gu"]
+radius = 25.02
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_x5orn")
@@ -29,3 +32,17 @@ texture = ExtResource("1_cxqmx")
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 script = ExtResource("3_nh811")
 tween_resource = SubResource("Resource_mosgt")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = 39.0
+offset_right = 21.0
+offset_bottom = 62.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5o8gu")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
