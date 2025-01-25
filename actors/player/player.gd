@@ -86,10 +86,15 @@ func velocity_movement(delta):
 	
 	$Label.text = str(velocity)
 
+func collect_oxygen(area : Node2D):
+	area.queue_free()
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("bubble"):
 		is_in_bubble = true
+	elif area.is_in_group("oxygen"):
+		collect_oxygen(area)
+		
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("bubble"):

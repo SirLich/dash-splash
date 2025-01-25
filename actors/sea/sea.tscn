@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://ce3ojkflyy65a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ilwy"]
-size = Vector2(6149, 2207)
+size = Vector2(47072, 5780)
 
 [node name="Sea" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(333.5, 1093.5)
+position = Vector2(2448, 2880)
 shape = SubResource("RectangleShape2D_5ilwy")
 debug_color = Color(0, 0.26187, 0.489968, 0.42)
