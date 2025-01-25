@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1idvagrr2pus"
-path="res://.godot/imported/teepublic_lethal-company-logo-texturized-teepublic_1705489119.webp-f10609f53bbac0fdf265b7bd130dc687.ctex"
+uid="uid://0cdsd3kebojc"
+path="res://.godot/imported/munich-epsorts-logo.png-3beb2ae2cfbc2d5642d826743e2a0e69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/teepublic_lethal-company-logo-texturized-teepublic_1705489119.webp"
-dest_files=["res://.godot/imported/teepublic_lethal-company-logo-texturized-teepublic_1705489119.webp-f10609f53bbac0fdf265b7bd130dc687.ctex"]
+source_file="res://assets/menu/munich-epsorts-logo.png"
+dest_files=["res://.godot/imported/munich-epsorts-logo.png-3beb2ae2cfbc2d5642d826743e2a0e69.ctex"]
 
 [params]
 

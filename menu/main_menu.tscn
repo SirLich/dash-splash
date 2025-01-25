@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1bwtl17un42a"]
+[gd_scene load_steps=5 format=3 uid="uid://d1bwtl17un42a"]
 
+[ext_resource type="Texture2D" uid="uid://lv3cdlp3nkx4" path="res://icon.svg" id="1_4jbti"]
 [ext_resource type="Script" path="res://menu/button.gd" id="1_lfo8a"]
-[ext_resource type="Texture2D" uid="uid://b1idvagrr2pus" path="res://assets/menu/teepublic_lethal-company-logo-texturized-teepublic_1705489119.webp" id="2_bxmfx"]
+[ext_resource type="PackedScene" uid="uid://81kxqvdo3igb" path="res://game.tscn" id="2_ngwdt"]
 [ext_resource type="Texture2D" uid="uid://y1x54fgl55sl" path="res://assets/menu/background_menu.jpg" id="3_fapwp"]
 
 [node name="MainMenu" type="Control"]
@@ -11,23 +12,42 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 479.0
-offset_top = 394.0
-offset_right = 697.0
-offset_bottom = 523.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -330.0
+offset_right = 200.0
+offset_bottom = -201.0
+grow_horizontal = 2
+grow_vertical = 0
 text = "PLAY"
 script = ExtResource("1_lfo8a")
+gamescene = ExtResource("2_ngwdt")
 
-[node name="TeepublicLethal-company-logo-texturized-teepublic1705489119" type="Sprite2D" parent="."]
-position = Vector2(585, 207)
-scale = Vector2(0.831746, 0.28254)
-texture = ExtResource("2_bxmfx")
+[node name="MenuTitle" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 750.0
+offset_top = 150.0
+offset_right = 4846.0
+offset_bottom = 4246.0
+scale = Vector2(0.0989695, 0.0991217)
+texture = ExtResource("1_4jbti")
 
-[node name="BackgroundMenu" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(577.25, 323.5)
-scale = Vector2(1.79082, 1.79722)
+[node name="Background" type="TextureRect" parent="."]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_fapwp")

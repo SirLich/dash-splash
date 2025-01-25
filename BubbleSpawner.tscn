@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://wejmrb0bnjoe"]
+
+[ext_resource type="Script" path="res://BubbleSpawner.gd" id="1_6dxlv"]
+[ext_resource type="PackedScene" uid="uid://djqkcdrdik1h0" path="res://ExtraBubbles.tscn" id="2_a7cx7"]
+
+[node name="BubbleSpawner" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_6dxlv")
+sprite_scene = ExtResource("2_a7cx7")
+player = NodePath(".")

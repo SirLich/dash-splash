@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://djqkcdrdik1h0"]
+
+[ext_resource type="Texture2D" uid="uid://dkvabrvthu2vm" path="res://actors/bubble/white-circle.svg" id="2_ffm4e"]
+
+[node name="ExtraBubbles" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 209)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_ffm4e")
