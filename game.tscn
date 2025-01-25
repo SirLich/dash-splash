@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=8 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
 [ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
+[ext_resource type="AudioStream" uid="uid://7yo4nw1v4wwf" path="res://audio/music/msc_DashSplash_ingame_v_1.wav" id="7_eg1kh"]
 
 [node name="Game" type="Node2D"]
 
@@ -111,3 +112,7 @@ scale = Vector2(0.134967, 0.134967)
 [node name="Blur3" parent="." instance=ExtResource("6_jsmc2")]
 position = Vector2(1511.85, -44.8499)
 scale = Vector2(0.164136, 0.164136)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_eg1kh")
+autoplay = true

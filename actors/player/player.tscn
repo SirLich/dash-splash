@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8genfsw8ql8t"]
+[gd_scene load_steps=17 format=3 uid="uid://b8genfsw8ql8t"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5hj02"]
 [ext_resource type="PackedScene" uid="uid://doxlrg43cukn7" path="res://actors/body/body.tscn" id="2_dmcjy"]
 [ext_resource type="PackedScene" uid="uid://dtotaie31v4yv" path="res://actors/splash/splash.tscn" id="2_vtf1g"]
+[ext_resource type="PackedScene" uid="uid://bhwb4gwxabhnu" path="res://assets/particle/bubble_particle.tscn" id="2_yskx6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_nh811"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
 [ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head_light.png" id="5_00n8w"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/lgHeadLowerFin.png" id="9_fiwmu"]
 [ext_resource type="AudioStream" uid="uid://cvvfgs6qeovrv" path="res://audio/sfx/player/sfx_player_jumpIntoBubble_randomizer.tres" id="10_35p5m"]
 [ext_resource type="AudioStream" uid="uid://dahcescqieerv" path="res://audio/sfx/player/sfx_player_jumpOutofBubble_randomizer.tres" id="11_n5vr5"]
+[ext_resource type="AudioStream" uid="uid://cxdo0d4gesbtq" path="res://audio/sfx/player/sfx_player_eat.wav" id="12_urh2n"]
 
 [sub_resource type="Curve" id="Curve_jgdli"]
 _data = [Vector2(0.0114193, 0.509247), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
@@ -28,6 +30,7 @@ radius = 27.0185
 [node name="Player" type="Node2D"]
 z_index = 1
 script = ExtResource("1_x5orn")
+particle_bubble = ExtResource("2_yskx6")
 splash_packed = ExtResource("2_vtf1g")
 body_scene = ExtResource("2_dmcjy")
 body_segments = 8
@@ -100,6 +103,9 @@ stream = ExtResource("10_35p5m")
 
 [node name="JumpOut" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_n5vr5")
+
+[node name="Eat" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_urh2n")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

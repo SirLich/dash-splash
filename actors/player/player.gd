@@ -1,5 +1,8 @@
 extends Node2D
 
+@export_group("Graphics")
+@export var particle_bubble : PackedScene
+
 @export_group("Movement")
 @export var velocity = Vector2()
 
@@ -84,7 +87,7 @@ func slither_movement(delta):
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if input_vector.length() > 0.1:
-		var desired_rotation = input_vector.angle() + 90
+		var desired_rotation = input_vector.angle() + PI/2
 		global_rotation = rotate_toward(global_rotation, desired_rotation, delta * get_turn_speed())
 		
 	if is_in_bubble:
@@ -111,7 +114,7 @@ func slither_movement(delta):
 		
 		var speed = velocity.length()
 		speed = clamp(speed, min_speed, max_speed)
-		$CanvasLayer/Label.text = str(speed)
+		$CanvasLayer/Label.text = str(global_rotation)
 		velocity = velocity.normalized() * speed
 		
 		# Update Transform
@@ -142,7 +145,7 @@ func slither_movement(delta):
 func collect_oxygen(area : Node2D):
 	area.queue_free()
 
-		
+
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("bubble"):
 		is_in_bubble = true
@@ -150,7 +153,13 @@ func _on_area_2d_area_entered(area):
 		can_boost = false
 		await get_tree().create_timer(bubble_move_delay).timeout
 		can_boost = true
+		var new_particle = particle_bubble.instantiate()
+		area.add_child(new_particle)
+		new_particle.global_position = global_position
+		new_particle.global_rotation = global_rotation + 180
+			
 	elif area.is_in_group("oxygen"):
+		$Eat.play()
 		collect_oxygen(area)
 		
 
@@ -170,7 +179,7 @@ func _on_area_2d_area_exited(area):
 			var new_splash = splash_packed.instantiate()
 			area.add_child(new_splash)
 			new_splash.global_position = global_position
-			new_splash.global_rotation = global_rotation
+			new_splash.global_rotation = global_rotation 
 
 			velocity = velocity * exit_water_boost 
 		else:
