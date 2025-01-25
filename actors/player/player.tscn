@@ -21,19 +21,22 @@ transition = 0
 ease = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o8gu"]
-radius = 34.0147
+radius = 27.0185
 
 [node name="Player" type="Node2D"]
 z_index = 1
 script = ExtResource("1_x5orn")
 splash_packed = ExtResource("2_vtf1g")
 body_scene = ExtResource("2_dmcjy")
-body_segments = 7
+body_segments = 8
 scale_curve = SubResource("Curve_jgdli")
+body_scale = 1.5
+snap_duration = 0.3
+follow_distance = 25
 
 [node name="Fins" type="Node2D" parent="."]
 position = Vector2(3.8147e-06, 3.8147e-06)
-scale = Vector2(1, 1)
+scale = Vector2(0.75, 0.75)
 
 [node name="LgHeadUpperFin" type="Sprite2D" parent="Fins"]
 position = Vector2(31, 12)
@@ -61,16 +64,17 @@ texture = ExtResource("9_fiwmu")
 offset = Vector2(-152.27, 191.51)
 flip_h = true
 
+[node name="Icon" type="Sprite2D" parent="Fins"]
+position = Vector2(-3.8147e-06, -3.8147e-06)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_00n8w")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("2_5hj02")
-
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("5_00n8w")
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 script = ExtResource("3_nh811")

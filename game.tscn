@@ -12,8 +12,9 @@
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+scroll_offset = Vector2(4707, 1060)
 repeat_size = Vector2(1730.56, 1730.56)
-repeat_times = 3
+repeat_times = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
 position = Vector2(-287, -611)

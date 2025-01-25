@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxc2ncxnjgxb"]
+[gd_scene load_steps=5 format=3 uid="uid://dxc2ncxnjgxb"]
 
 [ext_resource type="Script" path="res://actors/bubble/bubble.gd" id="1_7ymmi"]
+[ext_resource type="Material" uid="uid://dydub5gla5nmt" path="res://actors/bubble/bubble.tres" id="1_20mkj"]
 [ext_resource type="Texture2D" uid="uid://doj7sq25hm55a" path="res://assets/water_bubble.png" id="2_7c335"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qba6s"]
@@ -8,11 +9,13 @@ resource_local_to_scene = true
 radius = 100.0
 
 [node name="Bubble" type="Node2D" node_paths=PackedStringArray("sprite", "shape")]
+material = ExtResource("1_20mkj")
 script = ExtResource("1_7ymmi")
 sprite = NodePath("White-circle")
 shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="White-circle" type="Sprite2D" parent="."]
+z_index = 5
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_7c335")
 

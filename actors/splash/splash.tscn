@@ -40,6 +40,7 @@ script = ExtResource("1_1j5kh")
 sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
 sprite_frames = SubResource("SpriteFrames_axpo4")
 animation = &"splash"
 frame_progress = 0.719736
