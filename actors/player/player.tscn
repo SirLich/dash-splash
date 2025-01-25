@@ -18,15 +18,20 @@ transition = 0
 ease = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o8gu"]
-radius = 25.02
+radius = 23.1948
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 0
+motion_mode = 1
+wall_min_slide_angle = 0.0
+floor_stop_on_slope = false
 script = ExtResource("1_x5orn")
 body_scene = ExtResource("2_dmcjy")
 body_segments = 7
 scale_curve = SubResource("Curve_jgdli")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -53,6 +58,9 @@ offset_left = 77.0
 offset_top = 54.0
 offset_right = 117.0
 offset_bottom = 77.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -29, -11, -21, -25, 19, 24, 19, 11, -22)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -26,7 +26,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/donut_collision_polygon2D/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [file_customization]
 

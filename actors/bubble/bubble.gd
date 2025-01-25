@@ -10,6 +10,7 @@ var default_scale_shape : float
 
 @export var sprite : Sprite2D
 @export var shape : CollisionShape2D
+@export var shape2 : DonutCollisionPolygon2D
 
 func tween_up(direction):
 	await get_tree().create_timer(randf_range(0.0, float_time * 2)).timeout
@@ -31,6 +32,9 @@ func set_bubble_scale(size):
 	sprite.scale = Vector2(new_sprite_scale, new_sprite_scale)
 	
 	shape.shape.radius = default_scale_shape * size
+	shape2.radius = default_scale_shape * size / 9
+
+	
 	
 	
 	

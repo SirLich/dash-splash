@@ -12,7 +12,7 @@ func set_following(node : Node2D, snap: float, follow: float):
 	snap_duration = snap
 	follow_distance = follow
 	
-func _process(delta):
+func _physics_process(delta):
 	global_position = following.global_position + (following.global_transform.y * follow_distance)
 
 	tween = get_tree().create_tween()
