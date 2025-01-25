@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://dahcescqieerv"]
+
+[ext_resource type="AudioStream" uid="uid://dman3j8s52t4i" path="res://audio/sfx/player/sfx_player_jumpOutOfBubble-001.wav" id="1_yosru"]
+[ext_resource type="AudioStream" uid="uid://u0cifeefntgg" path="res://audio/sfx/player/sfx_player_jumpOutOfBubble-002.wav" id="2_jpknr"]
+[ext_resource type="AudioStream" uid="uid://dshikhlo0175a" path="res://audio/sfx/player/sfx_player_jumpOutOfBubble-003.wav" id="3_nc8kj"]
+
+[resource]
+random_pitch = 1.1
+random_volume_offset_db = 0.3
+streams_count = 3
+stream_0/stream = ExtResource("1_yosru")
+stream_1/stream = ExtResource("2_jpknr")
+stream_2/stream = ExtResource("3_nc8kj")
