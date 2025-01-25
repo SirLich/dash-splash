@@ -1,11 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=7 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
 [ext_resource type="PackedScene" uid="uid://ce3ojkflyy65a" path="res://actors/sea/sea.tscn" id="3_78olq"]
 [ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
+[ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
+[ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+repeat_size = Vector2(1730.56, 1730.56)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+position = Vector2(-287, -611)
+scale = Vector2(0.422607, 0.422607)
+texture = ExtResource("5_wns0y")
 
 [node name="Bubble5" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(425, -1044)
@@ -70,4 +83,30 @@ position = Vector2(16, 19)
 position = Vector2(677, 57)
 
 [node name="Sea" parent="." instance=ExtResource("3_78olq")]
-position = Vector2(108, 518)
+position = Vector2(79, 470)
+
+[node name="Blur" parent="." instance=ExtResource("6_jsmc2")]
+
+[node name="Blur6" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(-970.8, 184.8)
+scale = Vector2(0.125391, 0.125391)
+
+[node name="Blur2" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(1225, -940)
+scale = Vector2(0.137842, 0.137842)
+
+[node name="Blur7" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(1885, -1464)
+scale = Vector2(0.22981, 0.22981)
+
+[node name="Blur4" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(-302, -1266)
+scale = Vector2(0.200024, 0.200024)
+
+[node name="Blur5" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(741, -1827)
+scale = Vector2(0.134967, 0.134967)
+
+[node name="Blur3" parent="." instance=ExtResource("6_jsmc2")]
+position = Vector2(1511.85, -44.8499)
+scale = Vector2(0.164136, 0.164136)
