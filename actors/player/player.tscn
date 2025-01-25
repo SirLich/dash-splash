@@ -1,10 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8genfsw8ql8t"]
+[gd_scene load_steps=10 format=3 uid="uid://b8genfsw8ql8t"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5hj02"]
+[ext_resource type="PackedScene" uid="uid://doxlrg43cukn7" path="res://actors/body/body.tscn" id="2_dmcjy"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_nh811"]
 [ext_resource type="Texture2D" uid="uid://dmhbvjvpx5ew0" path="res://assets/head.png" id="3_qcxcg"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
+
+[sub_resource type="Curve" id="Curve_jgdli"]
+_data = [Vector2(0, 0.508075), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Resource" id="Resource_mosgt"]
 script = ExtResource("4_uamp4")
@@ -17,6 +22,8 @@ radius = 25.02
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_x5orn")
+body_scene = ExtResource("2_dmcjy")
+scale_curve = SubResource("Curve_jgdli")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

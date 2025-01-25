@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://doxlrg43cukn7"]
+
+[ext_resource type="Script" path="res://actors/body/body.gd" id="1_64wd2"]
+[ext_resource type="Texture2D" uid="uid://dmvd00suj2egu" path="res://assets/lgBodyPart.png" id="1_axobm"]
+
+[node name="Body" type="Node2D"]
+script = ExtResource("1_64wd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("1_axobm")

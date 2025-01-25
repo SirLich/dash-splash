@@ -16,7 +16,7 @@ shape = NodePath("Area2D/CollisionShape2D")
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_7c335")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_qba6s")
