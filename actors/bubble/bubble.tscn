@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doj7sq25hm55a" path="res://assets/water_bubble.png" id="2_7c335"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qba6s"]
+resource_local_to_scene = true
 radius = 100.0
 
 [node name="Bubble" type="Node2D" node_paths=PackedStringArray("sprite", "shape")]

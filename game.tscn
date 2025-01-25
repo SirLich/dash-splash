@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=4 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
+[ext_resource type="PackedScene" uid="uid://ce3ojkflyy65a" path="res://actors/sea/sea.tscn" id="3_78olq"]
 
 [node name="Game" type="Node2D"]
 
@@ -13,4 +14,7 @@ position = Vector2(679, 19)
 initial_size = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
-position = Vector2(189, -28)
+position = Vector2(209, 757)
+
+[node name="Sea" parent="." instance=ExtResource("3_78olq")]
+position = Vector2(108, 518)
