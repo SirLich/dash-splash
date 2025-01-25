@@ -10,7 +10,7 @@ extends Node2D
 @export var friction = 5
 
 @export var min_speed = 0
-@export var max_speed = 650
+@export var max_speed = 750
 
 @export var in_water_control = 100
 @export var exit_water_boost = 2
@@ -26,7 +26,7 @@ extends Node2D
 @export var body_scale = 2.0
 @export var snap_duration = 0.2
 @export var follow_distance = 30
-@export var required_exit_velocity = 240
+@export var required_exit_velocity = max_speed - 100
 
 var can_water_boost = false
 var water_boost_delay = 0.24
@@ -98,7 +98,7 @@ func slither_movement(delta):
 		
 		var speed = velocity.length()
 		speed = clamp(speed, min_speed, max_speed)
-
+		$CanvasLayer/Label.text = str(speed)
 		velocity = velocity.normalized() * speed
 		
 		# Update Transform
@@ -152,17 +152,7 @@ func _on_area_2d_area_exited(area):
 		var velocity_projection = velocity.dot(direction_to_center) * direction_to_center
 		var velocity_against_edge = velocity - velocity_projection
 		
-		if velocity_against_edge.length() > required_exit_velocity:
+		if velocity.length() > required_exit_velocity:
 			velocity = velocity * exit_water_boost 
 		else:
-			global_position = global_position + (direction_to_center * 10)
-			# Step 1: Calculate the direction to the center of the bubble
-
-			# Step 2: Calculate the tangent direction (counterclockwise 90 degrees)
-			var tangent_direction = Vector2(-direction_to_center.y, direction_to_center.x)
-			var desired_rotation = tangent_direction.angle() + 90
-			global_rotation = rotate_toward(global_rotation, desired_rotation, get_turn_speed())
-		
-			# Step 3: Align the velocity with the tangent direction
-			velocity = tangent_direction * velocity.length()
-			
+			velocity = -velocity
