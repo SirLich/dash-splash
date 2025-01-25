@@ -7,30 +7,6 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Bubble3" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(273, -210)
-
-[node name="Oxygen" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
-[node name="Bubble4" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(872, -365)
-
-[node name="Oxygen" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
 [node name="Bubble" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(205, 214)
 
@@ -55,6 +31,18 @@ position = Vector2(16, 19)
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
 position = Vector2(677, 57)
+velocity = null
+gravity = null
+acceleration = null
+rotation_speed = null
+friction = null
+min_speed = null
+max_speed = null
+bubble_move_delay = null
+body_segments = null
+body_scale = null
+snap_duration = null
+follow_distance = null
 
 [node name="Sea" parent="." instance=ExtResource("3_78olq")]
 position = Vector2(108, 518)
