@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
 
 [sub_resource type="Curve" id="Curve_jgdli"]
-_data = [Vector2(0, 0.508075), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
+_data = [Vector2(0.0114193, 0.509247), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Resource" id="Resource_mosgt"]

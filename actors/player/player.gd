@@ -6,7 +6,7 @@ extends Node2D
 @export var gravity = 450.8
 @export var acceleration = 500
 @export var rotation_speed = 20.0
-@export var friction = 3
+@export var friction = 5
 
 @export var min_speed = 0
 @export var max_speed = 1000
@@ -23,9 +23,9 @@ var is_in_bubble = true
 var last_rotation = 90
 var last_delta = 1.0
 var wiggles_per_second = 0.0
-var max_wiggles = 50
-var wiggle_reduce_factor = 4
-var wiggle_acceleration = 100
+var max_wiggles = 10
+var wiggle_reduce_factor = 6
+var wiggle_acceleration = 300
 var wiggle_size = 0.5
 
 func _ready():
@@ -45,16 +45,6 @@ func is_boosting():
 	return Input.is_action_pressed("boost")
 	
 func slither_movement(delta):
-	var rotation_delta = global_rotation - last_rotation
-
-	if (abs(rotation_delta) > wiggle_size):
-		wiggles_per_second += 1
-		last_rotation = global_rotation
-		last_delta = rotation_delta
-	
-	wiggles_per_second -= wiggle_reduce_factor * delta
-	wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
-	
 	# Rotation
 	var desired_rotation = global_position.angle_to_point(get_global_mouse_position()) + PI/2.0
 	global_rotation = rotate_toward(global_rotation, desired_rotation, delta * rotation_speed)
@@ -80,6 +70,16 @@ func slither_movement(delta):
 	else:
 		#global_rotation = velocity.normalized().angle() + 90
 		
+		# Wiggling
+		var rotation_delta = global_rotation - last_rotation
+		if (abs(rotation_delta) > wiggle_size):
+			wiggles_per_second += 1
+			last_rotation = global_rotation
+			last_delta = rotation_delta
+		
+		wiggles_per_second -= wiggle_reduce_factor * delta
+		wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
+	
 		var wiggle_factor = float(wiggles_per_second) / float(max_wiggles)
 		velocity += -global_transform.y * wiggle_acceleration * wiggle_factor * delta
 
@@ -101,4 +101,5 @@ func _on_area_2d_area_entered(area):
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("bubble"):
+		wiggles_per_second = 0
 		is_in_bubble = false
