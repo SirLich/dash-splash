@@ -13,7 +13,7 @@ extends Node2D
 @export var max_speed = 650
 
 @export var in_water_control = 100
-@export var exit_water_boost = 3.5
+@export var exit_water_boost = 2
 @export var bubble_move_delay = 0.27
 
 @export var max_mouse_acceleration = 2000
@@ -26,6 +26,7 @@ extends Node2D
 @export var body_scale = 2.0
 @export var snap_duration = 0.2
 @export var follow_distance = 30
+@export var required_exit_velocity = 240
 
 var can_water_boost = false
 var water_boost_delay = 0.24
@@ -65,8 +66,13 @@ func is_boosting():
 	
 func slither_movement(delta):
 	# Rotation
-	var desired_rotation = global_position.angle_to_point(get_global_mouse_position()) + PI/2.0
-	global_rotation = rotate_toward(global_rotation, desired_rotation, delta * get_turn_speed())
+	#var desired_rotation = global_position.angle_to_point(get_global_mouse_position()) + PI/2.0
+	
+	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if input_vector.length() > 0.1:
+		var desired_rotation = input_vector.angle() + 90
+		global_rotation = rotate_toward(global_rotation, desired_rotation, delta * get_turn_speed())
 		
 	if is_in_bubble:
 		# Apply Friction and Acceleration
@@ -138,6 +144,25 @@ func _on_area_2d_area_exited(area):
 	if area.is_in_group("bubble"):
 		wiggles_per_second = 0
 		is_in_bubble = false
-		var boost_ratio = self.global_position.distance_to(get_global_mouse_position()) / max_mouse_distance
-		print(boost_ratio)
-		velocity = velocity * exit_water_boost * boost_ratio
+		
+		#var boost_ratio = self.global_position.distance_to(get_global_mouse_position()) / max_mouse_distance
+		#print(boost_ratio)
+		
+		var direction_to_center = global_position.direction_to(area.global_position)
+		var velocity_projection = velocity.dot(direction_to_center) * direction_to_center
+		var velocity_against_edge = velocity - velocity_projection
+		
+		if velocity_against_edge.length() > required_exit_velocity:
+			velocity = velocity * exit_water_boost 
+		else:
+			global_position = global_position + (direction_to_center * 10)
+			# Step 1: Calculate the direction to the center of the bubble
+
+			# Step 2: Calculate the tangent direction (counterclockwise 90 degrees)
+			var tangent_direction = Vector2(-direction_to_center.y, direction_to_center.x)
+			var desired_rotation = tangent_direction.angle() + 90
+			global_rotation = rotate_toward(global_rotation, desired_rotation, get_turn_speed())
+		
+			# Step 3: Align the velocity with the tangent direction
+			velocity = tangent_direction * velocity.length()
+			
