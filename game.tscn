@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=4 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
+[ext_resource type="PackedScene" uid="uid://wejmrb0bnjoe" path="res://BubbleSpawner.tscn" id="3_vphjd"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,3 +10,6 @@
 
 [node name="Bubble" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(205, 214)
+
+[node name="BubbleSpawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_vphjd")]
+player = NodePath("../Player")
