@@ -1,14 +1,15 @@
 extends Node2D
 
 @export_group("Movement")
-@export var speed = 150
+@export var velocity = Vector2()
+
 @export var gravity = 450.8
 @export var acceleration = 500
 @export var rotation_speed = 20.0
-@export var friction = 900
-@export var min_speed = 100
-@export var max_speed = 2000
-@export var air_velocity = Vector2()
+@export var friction = 3
+
+@export var min_speed = 0
+@export var max_speed = 1000
 
 @export_group("Body")
 @export var body_scene : PackedScene
@@ -19,7 +20,7 @@ extends Node2D
 @export var follow_distance = 30
 
 var is_in_bubble = true
-var velocity = Vector2()
+var wiggle_factor = 1.0
 
 func _ready():
 	var last_actor = self
@@ -45,21 +46,26 @@ func slither_movement(delta):
 	if is_in_bubble:
 		# Apply Friction and Acceleration
 		if is_boosting():
-			speed += acceleration * delta
+			velocity += -global_transform.y * acceleration * delta
 		else:
-			speed -= friction * delta
-			
+			if velocity.length() > 0.01:
+				velocity = velocity * (1.0 - friction * delta)
+			else:
+				velocity = Vector2.ZERO
+		
+		var speed = velocity.length()
 		speed = clamp(speed, min_speed, max_speed)
+		velocity = velocity.normalized() * speed
 		
 		# Update Transform
-		air_velocity = -global_transform.y * speed
-		global_position += -global_transform.y * speed * delta
+		velocity -= global_transform.y * speed * delta
+		global_position += velocity * delta
 		
-		$Label.text = str(speed)
+		$Label.text = str(velocity)
 	else:
-		#global_rotation = air_velocity.normalized().angle() + 90
-		air_velocity.y += gravity * delta
-		global_position += air_velocity * delta
+		#global_rotation = velocity.normalized().angle() + 90
+		velocity.y += gravity * delta
+		global_position += velocity * delta
 
 
 func collect_oxygen(area : Node2D):
