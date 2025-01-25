@@ -146,6 +146,7 @@ func collect_oxygen(area : Node2D):
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("bubble"):
 		is_in_bubble = true
+		$JumpIn.play()
 		can_boost = false
 		await get_tree().create_timer(bubble_move_delay).timeout
 		can_boost = true
@@ -157,7 +158,7 @@ func _on_area_2d_area_exited(area):
 	if area.is_in_group("bubble"):
 		wiggles_per_second = 0
 		is_in_bubble = false
-		
+		$JumpOut.play()
 		#var boost_ratio = self.global_position.distance_to(get_global_mouse_position()) / max_mouse_distance
 		#print(boost_ratio)
 		

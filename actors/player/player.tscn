@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8genfsw8ql8t"]
+[gd_scene load_steps=15 format=3 uid="uid://b8genfsw8ql8t"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5hj02"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head_light.png" id="5_00n8w"]
 [ext_resource type="Texture2D" uid="uid://cwdty444dp15y" path="res://assets/character/lgHeadUpperFin.png" id="8_vov4l"]
 [ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/lgHeadLowerFin.png" id="9_fiwmu"]
+[ext_resource type="AudioStream" uid="uid://cvvfgs6qeovrv" path="res://audio/sfx/player/sfx_player_jumpIntoBubble_randomizer.tres" id="10_35p5m"]
+[ext_resource type="AudioStream" uid="uid://dahcescqieerv" path="res://audio/sfx/player/sfx_player_jumpOutofBubble_randomizer.tres" id="11_n5vr5"]
 
 [sub_resource type="Curve" id="Curve_jgdli"]
 _data = [Vector2(0.0114193, 0.509247), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
@@ -92,6 +94,12 @@ offset_left = 77.0
 offset_top = 54.0
 offset_right = 117.0
 offset_bottom = 77.0
+
+[node name="JumpIn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_35p5m")
+
+[node name="JumpOut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_n5vr5")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
