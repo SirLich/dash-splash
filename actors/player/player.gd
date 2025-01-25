@@ -15,7 +15,7 @@ extends Node2D
 @export var friction = 5
 
 @export var min_speed = 0
-@export var max_speed = 750
+@export var max_speed = 850
 
 @export var in_water_control = 100
 @export var exit_water_boost = 2
@@ -33,6 +33,9 @@ extends Node2D
 @export var follow_distance = 30
 @export var required_exit_velocity = max_speed - 100
 
+signal on_eaten
+var eaten = 0
+
 var can_water_boost = false
 var water_boost_delay = 0.24
 
@@ -41,10 +44,10 @@ var can_boost = false
 var last_rotation = 90
 var last_delta = 1.0
 var wiggles_per_second = 0.0
-var max_wiggles = 10
+var max_wiggles = 5
 var wiggle_reduce_factor = 6
-var wiggle_acceleration = 900
-var wiggle_size = 0.5
+var wiggle_acceleration = 1900
+var wiggle_size = 0.2
 var turn_speed = 3.0
 var air_turn_speed = 40
 
@@ -125,17 +128,17 @@ func slither_movement(delta):
 		#global_rotation = velocity.normalized().angle() + 90
 		
 		# Wiggling
-		var rotation_delta = global_rotation - last_rotation
-		if (abs(rotation_delta) > wiggle_size):
-			wiggles_per_second += 1
-			last_rotation = global_rotation
-			last_delta = rotation_delta
-		
-		wiggles_per_second -= wiggle_reduce_factor * delta
-		wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
-	
-		var wiggle_factor = float(wiggles_per_second) / float(max_wiggles)
-		velocity += -global_transform.y * wiggle_acceleration * wiggle_factor * delta
+		#var rotation_delta = global_rotation - last_rotation
+		#if (abs(rotation_delta) > wiggle_size):
+			#wiggles_per_second += 1
+			#last_rotation = global_rotation
+			#last_delta = rotation_delta
+		#
+		#wiggles_per_second -= wiggle_reduce_factor * delta
+		#wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
+	#
+		#var wiggle_factor = float(wiggles_per_second) / float(max_wiggles)
+		#velocity += -global_transform.y * wiggle_acceleration * wiggle_factor * delta
 
 		velocity.y += gravity * delta
 		global_position += velocity * delta
@@ -159,6 +162,9 @@ func _on_area_2d_area_entered(area):
 		new_particle.global_rotation = global_rotation + 180
 			
 	elif area.is_in_group("oxygen"):
+		on_eaten.emit()
+		eaten += 1
+		$CanvasLayer/HBoxContainer/EatLabel.text = str(eaten)
 		$Eat.play()
 		collect_oxygen(area)
 		
@@ -183,4 +189,5 @@ func _on_area_2d_area_exited(area):
 
 			velocity = velocity * exit_water_boost 
 		else:
+			$FailOut.play()
 			velocity = -velocity

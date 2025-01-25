@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=6 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
-[ext_resource type="PackedScene" uid="uid://ce3ojkflyy65a" path="res://actors/sea/sea.tscn" id="3_78olq"]
-[ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
 [ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="AudioStream" uid="uid://7yo4nw1v4wwf" path="res://audio/music/msc_DashSplash_ingame_v_1.wav" id="7_eg1kh"]
@@ -22,97 +20,117 @@ position = Vector2(-287, -611)
 scale = Vector2(0.422607, 0.422607)
 texture = ExtResource("5_wns0y")
 
-[node name="Bubble5" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(425, -1044)
-initial_size = 5.0
-
-[node name="Oxygen" parent="Bubble5" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble5" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble5" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
-[node name="Bubble3" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(273, -210)
-
-[node name="Oxygen" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble3" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
-[node name="Bubble4" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(872, -365)
-
-[node name="Oxygen" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble4" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
-[node name="Bubble" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(205, 214)
-
-[node name="Oxygen" parent="Bubble" instance=ExtResource("4_7rbnc")]
-position = Vector2(28, -32)
-
-[node name="Oxygen2" parent="Bubble" instance=ExtResource("4_7rbnc")]
-position = Vector2(-31, 30)
-
-[node name="Oxygen3" parent="Bubble" instance=ExtResource("4_7rbnc")]
-position = Vector2(-40, -28)
-
-[node name="Bubble2" parent="." instance=ExtResource("2_d3yyg")]
-position = Vector2(679, 19)
-initial_size = 2.0
-
-[node name="Oxygen" parent="Bubble2" instance=ExtResource("4_7rbnc")]
-position = Vector2(-44, -9)
-
-[node name="Oxygen2" parent="Bubble2" instance=ExtResource("4_7rbnc")]
-position = Vector2(16, 19)
-
-[node name="Player" parent="." instance=ExtResource("1_cvtyn")]
-position = Vector2(677, 57)
-
-[node name="Sea" parent="." instance=ExtResource("3_78olq")]
-position = Vector2(79, 470)
-
-[node name="Blur" parent="." instance=ExtResource("6_jsmc2")]
-
-[node name="Blur6" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(-970.8, 184.8)
-scale = Vector2(0.125391, 0.125391)
-
-[node name="Blur2" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(1225, -940)
-scale = Vector2(0.137842, 0.137842)
-
-[node name="Blur7" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(1885, -1464)
-scale = Vector2(0.22981, 0.22981)
-
-[node name="Blur4" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(-302, -1266)
-scale = Vector2(0.200024, 0.200024)
-
-[node name="Blur5" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(741, -1827)
-scale = Vector2(0.134967, 0.134967)
-
-[node name="Blur3" parent="." instance=ExtResource("6_jsmc2")]
-position = Vector2(1511.85, -44.8499)
-scale = Vector2(0.164136, 0.164136)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eg1kh")
 autoplay = true
+
+[node name="Nodes" type="Node2D" parent="."]
+
+[node name="Blur" parent="Nodes" instance=ExtResource("6_jsmc2")]
+
+[node name="Blur6" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(-970.8, 184.8)
+scale = Vector2(0.125391, 0.125391)
+
+[node name="Blur2" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(1225, -940)
+scale = Vector2(0.137842, 0.137842)
+
+[node name="Blur7" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(1885, -1464)
+scale = Vector2(0.22981, 0.22981)
+
+[node name="Blur4" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(-302, -1266)
+scale = Vector2(0.200024, 0.200024)
+
+[node name="Blur5" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(741, -1827)
+scale = Vector2(0.134967, 0.134967)
+
+[node name="Blur3" parent="Nodes" instance=ExtResource("6_jsmc2")]
+position = Vector2(1511.85, -44.8499)
+scale = Vector2(0.164136, 0.164136)
+
+[node name="Bubbles" type="Node2D" parent="."]
+
+[node name="Bubble" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(1134, 1323)
+initial_size = 10.0
+
+[node name="Bubble2" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(450, -1167)
+initial_size = 5.0
+
+[node name="Bubble8" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-927, -2822)
+initial_size = 8.0
+
+[node name="Bubble9" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-1711, -4481)
+initial_size = 6.0
+
+[node name="Bubble10" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-299, -5663)
+initial_size = 6.0
+
+[node name="Bubble12" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(176, -9414)
+initial_size = 6.0
+
+[node name="Bubble14" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-913, -10715)
+initial_size = 6.0
+
+[node name="Bubble13" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(119, -12351)
+initial_size = 9.0
+
+[node name="Bubble11" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-25, -7527)
+initial_size = 3.0
+
+[node name="Bubble3" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(1514, -403)
+initial_size = 4.0
+
+[node name="Bubble4" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(754, -2394)
+initial_size = 4.0
+
+[node name="Bubble5" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(1964, -3129)
+initial_size = 4.0
+
+[node name="Bubble18" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(3388, -3435)
+initial_size = 4.0
+
+[node name="Bubble6" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(4426, -2881)
+initial_size = 3.0
+
+[node name="Bubble7" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(5449, -2494)
+initial_size = 2.0
+
+[node name="Bubble15" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(6167, -2046)
+initial_size = 1.5
+
+[node name="Bubble16" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(6902, -1875)
+initial_size = 1.3
+
+[node name="Bubble17" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(7623, -1959)
+
+[node name="Player" parent="." instance=ExtResource("1_cvtyn")]
+position = Vector2(988, 789)
