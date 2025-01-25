@@ -20,7 +20,13 @@ extends Node2D
 @export var follow_distance = 30
 
 var is_in_bubble = true
-var wiggle_factor = 1.0
+var last_rotation = 90
+var last_delta = 1.0
+var wiggles_per_second = 0.0
+var max_wiggles = 50
+var wiggle_reduce_factor = 4
+var wiggle_acceleration = 100
+var wiggle_size = 0.5
 
 func _ready():
 	var last_actor = self
@@ -39,6 +45,16 @@ func is_boosting():
 	return Input.is_action_pressed("boost")
 	
 func slither_movement(delta):
+	var rotation_delta = global_rotation - last_rotation
+
+	if (abs(rotation_delta) > wiggle_size):
+		wiggles_per_second += 1
+		last_rotation = global_rotation
+		last_delta = rotation_delta
+	
+	wiggles_per_second -= wiggle_reduce_factor * delta
+	wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
+	
 	# Rotation
 	var desired_rotation = global_position.angle_to_point(get_global_mouse_position()) + PI/2.0
 	global_rotation = rotate_toward(global_rotation, desired_rotation, delta * rotation_speed)
@@ -61,11 +77,16 @@ func slither_movement(delta):
 		velocity -= global_transform.y * speed * delta
 		global_position += velocity * delta
 		
-		$Label.text = str(velocity)
 	else:
 		#global_rotation = velocity.normalized().angle() + 90
+		
+		var wiggle_factor = float(wiggles_per_second) / float(max_wiggles)
+		velocity += -global_transform.y * wiggle_acceleration * wiggle_factor * delta
+
 		velocity.y += gravity * delta
 		global_position += velocity * delta
+		
+		$Label.text = str(wiggle_factor)
 
 
 func collect_oxygen(area : Node2D):
