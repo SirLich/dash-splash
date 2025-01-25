@@ -55,16 +55,27 @@ func _ready():
 	for i in body_segments:
 		var new_body = body_scene.instantiate() as Body
 		new_body.set_following(last_actor, snap_duration, follow_distance)
+		new_body.head = self
 		var scale_ratio =  float(i) / float(body_segments)
 		new_body.scale = new_body.scale * body_scale * scale_curve.sample(scale_ratio)
 		last_actor = new_body
 		add_sibling.call_deferred(new_body)
 	
 func _process(delta):
+	var current_speed = velocity.length()
+	var speed_ratio = current_speed / max_speed
+	
+	speed_ratio = clamp(speed_ratio, 0.0, 1.0)
+	var max_rotation = 50
+	$Fins/LgHeadUpperFin.rotation_degrees = speed_ratio * max_rotation
+	$Fins/LgHeadLowerFin.rotation_degrees = speed_ratio * max_rotation
+	$Fins/LgHeadUpperFin2.rotation_degrees = speed_ratio * -max_rotation
+	$Fins/LgHeadLowerFin2.rotation_degrees = speed_ratio * -max_rotation
 	slither_movement(delta)
 
 func is_boosting():
 	return Input.is_action_pressed("boost") and can_boost
+
 	
 func slither_movement(delta):
 	# Rotation

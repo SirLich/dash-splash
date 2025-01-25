@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmvd00suj2egu"
-path="res://.godot/imported/lgBodyPart.png-d06163e3207fbf3866130d550e63d089.ctex"
+path="res://.godot/imported/lgBodyPart.png-d2bb7c89be8308a2f4447bfafed4f73f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lgBodyPart.png"
-dest_files=["res://.godot/imported/lgBodyPart.png-d06163e3207fbf3866130d550e63d089.ctex"]
+source_file="res://assets/character/lgBodyPart.png"
+dest_files=["res://.godot/imported/lgBodyPart.png-d2bb7c89be8308a2f4447bfafed4f73f.ctex"]
 
 [params]
 
