@@ -7,9 +7,12 @@
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
+z_index = 2
+position = Vector2(206, 211)
 
 [node name="Bubble" parent="." instance=ExtResource("2_d3yyg")]
 position = Vector2(205, 214)
 
 [node name="BubbleSpawner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_vphjd")]
+position = Vector2(-2, -5)
 player = NodePath("../Player")
