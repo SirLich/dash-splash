@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=8 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
+[ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
 [ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="AudioStream" uid="uid://7yo4nw1v4wwf" path="res://audio/music/msc_DashSplash_ingame_v_1.wav" id="7_eg1kh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7xyn"]
 
 [node name="Game" type="Node2D"]
 
@@ -58,25 +61,72 @@ scale = Vector2(0.164136, 0.164136)
 position = Vector2(1134, 1323)
 initial_size = 10.0
 
+[node name="Oxygen" parent="Bubbles/Bubble" instance=ExtResource("4_7rbnc")]
+position = Vector2(-609, -441)
+
+[node name="Oxygen2" parent="Bubbles/Bubble" instance=ExtResource("4_7rbnc")]
+position = Vector2(-334, 312)
+
+[node name="Oxygen3" parent="Bubbles/Bubble" instance=ExtResource("4_7rbnc")]
+position = Vector2(-797, 223)
+
+[node name="Oxygen4" parent="Bubbles/Bubble" instance=ExtResource("4_7rbnc")]
+position = Vector2(231, -823)
+
+[node name="Oxygen5" parent="Bubbles/Bubble" instance=ExtResource("4_7rbnc")]
+position = Vector2(98, -1007)
+
 [node name="Bubble2" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(450, -1167)
 initial_size = 5.0
+
+[node name="Oxygen" parent="Bubbles/Bubble2" instance=ExtResource("4_7rbnc")]
+position = Vector2(-184, 234)
+
+[node name="Oxygen2" parent="Bubbles/Bubble2" instance=ExtResource("4_7rbnc")]
+position = Vector2(-350, -241)
+
+[node name="Oxygen3" parent="Bubbles/Bubble2" instance=ExtResource("4_7rbnc")]
+position = Vector2(120, -193)
 
 [node name="Bubble8" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-927, -2822)
 initial_size = 8.0
 
+[node name="Oxygen" parent="Bubbles/Bubble8" instance=ExtResource("4_7rbnc")]
+position = Vector2(240, 489)
+
+[node name="Oxygen2" parent="Bubbles/Bubble8" instance=ExtResource("4_7rbnc")]
+position = Vector2(-285, 339)
+
+[node name="Oxygen3" parent="Bubbles/Bubble8" instance=ExtResource("4_7rbnc")]
+position = Vector2(523, -62)
+
 [node name="Bubble9" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-1711, -4481)
 initial_size = 6.0
 
+[node name="Oxygen" parent="Bubbles/Bubble9" instance=ExtResource("4_7rbnc")]
+
+[node name="Oxygen2" parent="Bubbles/Bubble9" instance=ExtResource("4_7rbnc")]
+position = Vector2(-472, 61)
+
+[node name="Oxygen3" parent="Bubbles/Bubble9" instance=ExtResource("4_7rbnc")]
+position = Vector2(180, -305)
+
 [node name="Bubble10" parent="Bubbles" instance=ExtResource("2_d3yyg")]
-position = Vector2(-299, -5663)
+position = Vector2(-333, -5851)
 initial_size = 6.0
 
+[node name="Oxygen" parent="Bubbles/Bubble10" instance=ExtResource("4_7rbnc")]
+position = Vector2(93, -561)
+
 [node name="Bubble12" parent="Bubbles" instance=ExtResource("2_d3yyg")]
-position = Vector2(176, -9414)
+position = Vector2(102, -9280)
 initial_size = 6.0
+
+[node name="Oxygen" parent="Bubbles/Bubble12" instance=ExtResource("4_7rbnc")]
+position = Vector2(-62, 554)
 
 [node name="Bubble14" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-913, -10715)
@@ -90,9 +140,31 @@ initial_size = 9.0
 position = Vector2(-25, -7527)
 initial_size = 3.0
 
+[node name="Oxygen" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
+position = Vector2(-143, -147)
+
+[node name="Oxygen2" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
+
+[node name="Oxygen3" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
+position = Vector2(-181, 42)
+
+[node name="Oxygen4" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
+position = Vector2(80, -203)
+
+[node name="Oxygen5" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
+position = Vector2(80, 158)
+
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(1514, -403)
 initial_size = 4.0
+
+[node name="Oxygen" parent="Bubbles/Bubble3" instance=ExtResource("4_7rbnc")]
+
+[node name="Oxygen2" parent="Bubbles/Bubble3" instance=ExtResource("4_7rbnc")]
+position = Vector2(-122, -216)
+
+[node name="Oxygen3" parent="Bubbles/Bubble3" instance=ExtResource("4_7rbnc")]
+position = Vector2(-28, 361)
 
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(754, -2394)
@@ -102,6 +174,9 @@ initial_size = 4.0
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
 position = Vector2(1964, -3129)
 initial_size = 4.0
+
+[node name="Oxygen" parent="Bubbles/Bubble5" instance=ExtResource("4_7rbnc")]
+position = Vector2(103, 75)
 
 [node name="Bubble18" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
@@ -113,6 +188,9 @@ modulate = Color(0.507972, 0.507972, 0.507972, 1)
 position = Vector2(4426, -2881)
 initial_size = 3.0
 
+[node name="Oxygen" parent="Bubbles/Bubble6" instance=ExtResource("4_7rbnc")]
+position = Vector2(53, 53)
+
 [node name="Bubble7" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
 position = Vector2(5449, -2494)
@@ -122,6 +200,59 @@ initial_size = 2.0
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
 position = Vector2(6167, -2046)
 initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble15" instance=ExtResource("4_7rbnc")]
+position = Vector2(39, 75)
+
+[node name="Bubble19" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(790, -11267)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble19" instance=ExtResource("4_7rbnc")]
+position = Vector2(-28, 59)
+
+[node name="Bubble20" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(1214, -11591)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble20" instance=ExtResource("4_7rbnc")]
+position = Vector2(53, -15)
+
+[node name="Bubble21" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(1547, -12155)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble21" instance=ExtResource("4_7rbnc")]
+position = Vector2(-102, 34)
+
+[node name="Bubble22" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(1533, -12716)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble22" instance=ExtResource("4_7rbnc")]
+position = Vector2(34, 70)
+
+[node name="Oxygen" parent="Bubbles" instance=ExtResource("4_7rbnc")]
+
+[node name="Bubble23" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(1366, -13236)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble23" instance=ExtResource("4_7rbnc")]
+position = Vector2(-75, 9)
+
+[node name="Bubble24" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.507972, 0.507972, 0.507972, 1)
+position = Vector2(949, -13632)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble24" instance=ExtResource("4_7rbnc")]
+position = Vector2(6, 48)
 
 [node name="Bubble16" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
@@ -134,3 +265,10 @@ position = Vector2(7623, -1959)
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
 position = Vector2(988, 789)
+
+[node name="Area2D" type="Area2D" parent="." groups=["respawn"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(233, 3964)
+shape = SubResource("WorldBoundaryShape2D_c7xyn")
+debug_color = Color(0.749957, 0.203733, 0.99719, 0.42)

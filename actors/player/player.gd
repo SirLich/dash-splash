@@ -167,6 +167,9 @@ func _on_area_2d_area_entered(area):
 		$CanvasLayer/HBoxContainer/EatLabel.text = str(eaten)
 		$Eat.play()
 		collect_oxygen(area)
+	elif area.is_in_group("respawn"):
+		global_position = Vector2(0.0, 0.0)
+		velocity = Vector2(0.0, 0.0)
 		
 
 func _on_area_2d_area_exited(area):
