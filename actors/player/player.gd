@@ -3,6 +3,8 @@ extends Node2D
 @export_group("Movement")
 @export var velocity = Vector2()
 
+@export var splash_packed : PackedScene
+
 @export var gravity = 1450.8
 @export var acceleration = 200
 @export var rotation_speed = 10.0
@@ -153,6 +155,11 @@ func _on_area_2d_area_exited(area):
 		var velocity_against_edge = velocity - velocity_projection
 		
 		if velocity.length() > required_exit_velocity:
+			var new_splash = splash_packed.instantiate()
+			area.add_child(new_splash)
+			new_splash.global_position = global_position
+			new_splash.global_rotation = global_rotation
+
 			velocity = velocity * exit_water_boost 
 		else:
 			velocity = -velocity
