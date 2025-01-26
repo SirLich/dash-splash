@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://yxprrkilctw4"]
+
+[ext_resource type="Texture2D" uid="uid://bbjo8v7km170l" path="res://assets/anemone/AnemoneIdle-1.png" id="1_firm0"]
+[ext_resource type="Texture2D" uid="uid://brjinasfw5qu0" path="res://assets/anemone/AnemoneIdle-2.png" id="2_w51x8"]
+[ext_resource type="Texture2D" uid="uid://c8y3ni8bot7kd" path="res://assets/anemone/AnemoneIdle-3.png" id="3_6dug2"]
+[ext_resource type="Texture2D" uid="uid://3aj81p0d16pd" path="res://assets/anemone/AnemoneIdle-4.png" id="4_td68i"]
+[ext_resource type="Texture2D" uid="uid://b08dcq1qnnslw" path="res://assets/anemone/AnemoneIdle-5.png" id="5_l8y43"]
+[ext_resource type="Texture2D" uid="uid://f8hx7stm11tt" path="res://assets/anemone/AnemoneIdle-6.png" id="6_odt74"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6v7kk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vnss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_firm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w51x8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6dug2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_td68i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l8y43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_odt74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Anemone" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6v7kk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4vnss")
+frame_progress = 0.419578

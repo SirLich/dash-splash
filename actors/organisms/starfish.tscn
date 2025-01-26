@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://jflflu8nki35"]
+
+[ext_resource type="Texture2D" uid="uid://bwg1onh7bbran" path="res://assets/starfish/Starfish-1.png" id="1_15uwq"]
+[ext_resource type="Texture2D" uid="uid://ix1ysfsur1kr" path="res://assets/starfish/Starfish-2.png" id="2_y85sy"]
+[ext_resource type="Texture2D" uid="uid://0s6yppo1d0gb" path="res://assets/starfish/Starfish-3.png" id="3_flwab"]
+[ext_resource type="Texture2D" uid="uid://cx1l62xavlmc6" path="res://assets/starfish/Starfish-4.png" id="4_gq5a8"]
+[ext_resource type="Texture2D" uid="uid://w65hcn5eaffg" path="res://assets/starfish/StarfishExit-1.png" id="5_f5yqj"]
+[ext_resource type="Texture2D" uid="uid://bfb06gupk7t4n" path="res://assets/starfish/StarfishExit-2.png" id="6_5ii20"]
+[ext_resource type="Texture2D" uid="uid://bmk4ppgmpenay" path="res://assets/starfish/StarfishExit-3.png" id="7_ojhx5"]
+[ext_resource type="Texture2D" uid="uid://dai07u5volw86" path="res://assets/starfish/StarfishExit-4.png" id="8_ityut"]
+[ext_resource type="Texture2D" uid="uid://dy12rcwexjt28" path="res://assets/starfish/StarfishExit-5.png" id="9_ss6ld"]
+[ext_resource type="Texture2D" uid="uid://1l8xmc7g5fth" path="res://assets/starfish/StarfishExit-6.png" id="10_h27gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31nuk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c4bvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_15uwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y85sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_flwab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gq5a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f5yqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5ii20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ojhx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ityut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ss6ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h27gy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Starfish" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_31nuk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c4bvb")
+frame_progress = 0.78312

@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1bwtl17un42a"]
+[gd_scene load_steps=13 format=3 uid="uid://d1bwtl17un42a"]
 
 [ext_resource type="Texture2D" uid="uid://lv3cdlp3nkx4" path="res://icon.svg" id="1_4jbti"]
+[ext_resource type="Script" path="res://menu/main_menu.gd" id="1_4ws88"]
 [ext_resource type="Script" path="res://menu/button.gd" id="1_lfo8a"]
 [ext_resource type="PackedScene" uid="uid://81kxqvdo3igb" path="res://game.tscn" id="2_ngwdt"]
-[ext_resource type="Texture2D" uid="uid://y1x54fgl55sl" path="res://assets/menu/background_menu.jpg" id="3_fapwp"]
+[ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="3_d5kru"]
+[ext_resource type="Script" path="res://menu/button_group.gd" id="4_hfxln"]
+[ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="4_tolkf"]
+[ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="5_cuccu"]
+[ext_resource type="Texture2D" uid="uid://2o4s7ccj7x2d" path="res://assets/menu/Play.png" id="5_mopjw"]
+[ext_resource type="Texture2D" uid="uid://dw04awn23ihm2" path="res://assets/menu/Options.png" id="8_wli13"]
+[ext_resource type="Texture2D" uid="uid://bj0sasijl4y17" path="res://assets/menu/Exit.png" id="9_egj8d"]
+[ext_resource type="Script" path="res://menu/exit_button.gd" id="10_gil3f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,23 +22,43 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_4ws88")
+OxygenSprite = ExtResource("5_cuccu")
+BubbleSprite = ExtResource("3_d5kru")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
+[node name="Node" type="Node" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Node"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -330.0
-offset_right = 200.0
-offset_bottom = -201.0
+offset_left = -900.0
+offset_top = -1027.0
+offset_right = 900.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "PLAY"
+scale = Vector2(0.3, 0.3)
+script = ExtResource("4_hfxln")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Node/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Node/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_mopjw")
 script = ExtResource("1_lfo8a")
 gamescene = ExtResource("2_ngwdt")
+
+[node name="Options" type="Button" parent="Node/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("8_wli13")
+
+[node name="ExitButton" type="Button" parent="Node/MarginContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("9_egj8d")
+script = ExtResource("10_gil3f")
 
 [node name="MenuTitle" type="TextureRect" parent="."]
 layout_mode = 1
@@ -50,4 +78,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_fapwp")
+texture = ExtResource("4_tolkf")
