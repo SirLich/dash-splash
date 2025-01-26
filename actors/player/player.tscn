@@ -91,7 +91,7 @@ script = ExtResource("2_5hj02")
 script = ExtResource("3_nh811")
 tween_resource = SubResource("Resource_mosgt")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5o8gu")

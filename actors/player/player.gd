@@ -1,4 +1,5 @@
 extends Node2D
+class_name Player
 
 @export_group("Graphics")
 @export var particle_bubble : PackedScene
@@ -168,9 +169,7 @@ func _on_area_2d_area_entered(area):
 		$Eat.play()
 		collect_oxygen(area)
 	elif area.is_in_group("respawn"):
-		global_position = Vector2(0.0, 0.0)
-		velocity = Vector2(0.0, 0.0)
-		
+		Bus.on_player_fell.emit(self)
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("bubble"):
