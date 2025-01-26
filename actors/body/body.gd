@@ -1,7 +1,7 @@
 extends Node2D
 class_name Body
 
-var snap_duration = 0.1
+var snap_duration = 0.07
 var following : Node2D
 var head : Node2D
 
@@ -17,7 +17,8 @@ func _process(delta):
 	global_position = following.global_position + (following.global_transform.y * follow_distance)
 
 	tween = get_tree().create_tween()
-	tween.tween_property(self, "global_rotation", following.global_rotation, snap_duration)
+	var dir = lerp_angle(global_rotation, following.global_rotation, 1)
+	tween.tween_property(self, "global_rotation", dir, snap_duration)
 	
 	var current_speed = head.velocity.length()
 	var speed_ratio = current_speed / head.max_speed

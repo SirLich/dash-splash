@@ -34,11 +34,17 @@ texture = ExtResource("5_wns0y")
 unique_name_in_owner = true
 
 [node name="RespawnAnchor" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
-position = Vector2(1164, 586)
+position = Vector2(1144, 373)
 is_active = true
 
 [node name="RespawnAnchor2" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
-position = Vector2(679, 597)
+position = Vector2(1021, -2575)
+
+[node name="RespawnAnchor3" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
+position = Vector2(-300, -6337)
+
+[node name="RespawnAnchor4" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
+position = Vector2(135, -12359)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eg1kh")
