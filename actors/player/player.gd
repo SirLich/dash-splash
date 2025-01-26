@@ -119,7 +119,6 @@ func slither_movement(delta):
 		
 		var speed = velocity.length()
 		speed = clamp(speed, min_speed, max_speed)
-		$CanvasLayer/Label.text = str(global_rotation)
 		velocity = velocity.normalized() * speed
 		
 		# Update Transform
