@@ -5,6 +5,9 @@ func _ready():
 	Bus.on_game_started.connect(on_game_started)
 	Bus.on_star_collected.connect(on_star_collected)
 	Bus.on_spike_collected.connect(on_spike_collected)
+	Bus.on_flutter_collected.connect(on_flutter_collected)
+
+	
 func on_game_started():
 	stars = 0
 	deaths = 0
@@ -22,10 +25,16 @@ func on_spike_collected(star):
 	spikes += 1
 	spike_count.text = str(spikes)
 	
+func on_flutter_collected(star):
+	flutters += 1
+	flutter_count.text = str(flutters)
+	
 var stars = 0
 var deaths = 0
 var spikes = 0
+var flutters = 0
 
 @export var star_count : Label
 @export var death_count : Label
 @export var spike_count : Label
+@export var flutter_count : Label

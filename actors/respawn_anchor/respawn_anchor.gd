@@ -8,9 +8,13 @@ class_name RespawnAnchor
 @export var is_active = false
 
 func _ready():
-	set_active(is_active)
+	if is_active:
+		inside.modulate = active_color
+	else:
+		inside.modulate = deactive_color
 		
 func set_active(new_active):
+	$AudioStreamPlayer.play()
 	is_active = new_active
 	
 	if is_active:
