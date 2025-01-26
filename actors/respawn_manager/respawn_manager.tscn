@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm0erntl7bfg6"]
+[gd_scene load_steps=3 format=3 uid="uid://cm0erntl7bfg6"]
 
 [ext_resource type="Script" path="res://actors/respawn_manager/respawn_manager.gd" id="1_ssd3t"]
+[ext_resource type="AudioStream" uid="uid://cc5m3axc4aglc" path="res://audio/sfx/player/sfx_player_respawning.wav" id="2_tip4e"]
 
 [node name="RespawnManager" type="Node2D"]
 script = ExtResource("1_ssd3t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tip4e")
