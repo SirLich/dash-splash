@@ -169,6 +169,21 @@ position = Vector2(-472, 61)
 [node name="Oxygen3" parent="Bubbles/Bubble9" instance=ExtResource("4_7rbnc")]
 position = Vector2(180, -305)
 
+[node name="Bubble37" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.972549, 0.698039, 0.756863, 1)
+position = Vector2(-904, -16573)
+initial_size = 6.0
+
+[node name="Oxygen" parent="Bubbles/Bubble37" instance=ExtResource("4_7rbnc")]
+
+[node name="Oxygen2" parent="Bubbles/Bubble37" instance=ExtResource("4_7rbnc")]
+position = Vector2(-472, 61)
+
+[node name="Oxygen3" parent="Bubbles/Bubble37" instance=ExtResource("4_7rbnc")]
+position = Vector2(180, -305)
+
+[node name="RespawnAnchor" parent="Bubbles/Bubble37" instance=ExtResource("8_2n0a5")]
+
 [node name="Bubble10" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
 position = Vector2(-333, -5851)
@@ -187,6 +202,38 @@ position = Vector2(-62, 554)
 [node name="Bubble14" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-913, -10715)
 initial_size = 6.0
+size_override = null
+
+[node name="Bubble28" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-694, -13402)
+initial_size = 1.5
+size_override = null
+
+[node name="Bubble29" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-561, -13851)
+size_override = null
+
+[node name="Bubble30" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-860, -14131)
+size_override = null
+
+[node name="Bubble31" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-575, -14449)
+size_override = null
+
+[node name="Bubble32" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-890, -14742)
+initial_size = 0.7
+size_override = null
+
+[node name="Bubble33" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-734, -14998)
+initial_size = 0.7
+size_override = null
+
+[node name="Bubble34" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+position = Vector2(-879, -15259)
+initial_size = 0.7
 size_override = null
 
 [node name="Bubble13" parent="Bubbles" instance=ExtResource("2_d3yyg")]
@@ -221,6 +268,15 @@ position = Vector2(-122, -216)
 [node name="Oxygen3" parent="Bubbles/Bubble3" instance=ExtResource("4_7rbnc")]
 position = Vector2(-28, 361)
 
+[node name="Bubble36" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.690196, 0.592157, 0, 1)
+position = Vector2(-235, -10)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble36" instance=ExtResource("4_7rbnc")]
+
+[node name="Starfish" parent="Bubbles/Bubble36" instance=ExtResource("6_k2kd1")]
+
 [node name="Bubble4" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
 position = Vector2(754, -2394)
@@ -233,6 +289,40 @@ initial_size = 4.0
 
 [node name="Oxygen" parent="Bubbles/Bubble5" instance=ExtResource("4_7rbnc")]
 position = Vector2(103, 75)
+
+[node name="Bubble26" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
+position = Vector2(-2797, -5152)
+initial_size = 2.0
+
+[node name="Oxygen" parent="Bubbles/Bubble26" instance=ExtResource("4_7rbnc")]
+position = Vector2(103, 75)
+
+[node name="Bubble27" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.690196, 0.592157, 0, 1)
+self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
+position = Vector2(-4446, -5152)
+initial_size = 2.0
+
+[node name="Oxygen" parent="Bubbles/Bubble27" instance=ExtResource("4_7rbnc")]
+position = Vector2(103, 75)
+
+[node name="F3" parent="Bubbles/Bubble27" instance=ExtResource("21_xv07y")]
+position = Vector2(344, -187)
+
+[node name="F4" parent="Bubbles/Bubble27" instance=ExtResource("21_xv07y")]
+position = Vector2(604, -239)
+
+[node name="F5" parent="Bubbles/Bubble27" instance=ExtResource("21_xv07y")]
+position = Vector2(878, -250)
+
+[node name="F6" parent="Bubbles/Bubble27" instance=ExtResource("21_xv07y")]
+position = Vector2(1122, -215)
+
+[node name="F7" parent="Bubbles/Bubble27" instance=ExtResource("21_xv07y")]
+position = Vector2(1311, -137)
+
+[node name="Starfish" parent="Bubbles/Bubble27" instance=ExtResource("6_k2kd1")]
 
 [node name="Bubble18" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
@@ -297,6 +387,16 @@ initial_size = 1.5
 [node name="Oxygen" parent="Bubbles/Bubble23" instance=ExtResource("4_7rbnc")]
 position = Vector2(-75, 9)
 
+[node name="Bubble35" parent="Bubbles" instance=ExtResource("2_d3yyg")]
+modulate = Color(0.690196, 0.592157, 0, 1)
+position = Vector2(-865, -15649)
+initial_size = 1.5
+
+[node name="Oxygen" parent="Bubbles/Bubble35" instance=ExtResource("4_7rbnc")]
+position = Vector2(-75, 9)
+
+[node name="Starfish" parent="Bubbles/Bubble35" instance=ExtResource("6_k2kd1")]
+
 [node name="Bubble24" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(949, -13632)
 initial_size = 1.5
@@ -312,7 +412,13 @@ initial_size = 1.3
 modulate = Color(0.980392, 0.823529, 0.639216, 1)
 position = Vector2(7623, -1959)
 
+[node name="F2" parent="Bubbles/Bubble17" instance=ExtResource("21_xv07y")]
+position = Vector2(-9024, -1780)
+
 [node name="Starfish" parent="Bubbles/Bubble17" instance=ExtResource("6_k2kd1")]
+
+[node name="F3" parent="Bubbles/Bubble17" instance=ExtResource("21_xv07y")]
+position = Vector2(-7377, -3189)
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
 position = Vector2(988, 789)
@@ -478,12 +584,12 @@ text = "0"
 label_settings = SubResource("LabelSettings_p6v0c")
 
 [node name="F2" parent="." instance=ExtResource("21_xv07y")]
-position = Vector2(360, 219)
+position = Vector2(378, 238)
 
 [node name="F3" parent="." instance=ExtResource("21_xv07y")]
-position = Vector2(220, 125)
+position = Vector2(232, 129)
 
 [node name="F4" parent="." instance=ExtResource("21_xv07y")]
-position = Vector2(43, 42)
+position = Vector2(57, 52)
 
 [connection signal="on_eaten" from="Player" to="RespawnManager" method="_on_player_on_eaten"]
