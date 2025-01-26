@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=22 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
@@ -13,9 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://da7jguys5xosy" path="res://actors/respawn_anchor/respawn_anchor.tscn" id="8_2n0a5"]
 [ext_resource type="Script" path="res://fade_manager.gd" id="9_52ig5"]
 [ext_resource type="Script" path="res://fps.gd" id="9_ayxs6"]
-[ext_resource type="Texture2D" uid="uid://cjiaxwvcgocgi" path="res://assets/ui.png" id="14_h8sgi"]
+[ext_resource type="Texture2D" uid="uid://b5usifebf1jd" path="res://assets/ui/CounterBar-1.png" id="14_0ywlb"]
+[ext_resource type="Script" path="res://hud.gd" id="14_ohkxs"]
 [ext_resource type="Texture2D" uid="uid://wbpic8gw1nwb" path="res://assets/outline_guy.png" id="15_q4rxg"]
-[ext_resource type="Texture2D" uid="uid://cbkuoioy648tu" path="res://assets/ui2.png" id="16_krtgy"]
+[ext_resource type="Texture2D" uid="uid://1quepov0oong" path="res://assets/starfish_icon.png" id="17_bex6v"]
 [ext_resource type="Texture2D" uid="uid://r0fay6cllvhl" path="res://assets/death.png" id="17_gwqbi"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7xyn"]
@@ -341,7 +342,11 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("9_52ig5")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+[node name="CanvasLayer3" type="CanvasLayer" parent="." node_paths=PackedStringArray("star_count", "death_count", "spike_count")]
+script = ExtResource("14_ohkxs")
+star_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/StartLabel")
+death_count = NodePath("HBoxContainer/TextureRect/HBoxContainer/DeathLabel")
+spike_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/SpikeLabel")
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
 offset_left = 77.0
@@ -350,6 +355,7 @@ offset_right = 117.0
 offset_bottom = 77.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer3"]
+self_modulate = Color(0.628859, 0.646542, 0.428774, 1)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -364,9 +370,10 @@ grow_vertical = 0
 size_flags_vertical = 4
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer3/HBoxContainer"]
+self_modulate = Color(0.428407, 0.715068, 0.735928, 0.470588)
 custom_minimum_size = Vector2(600, 120)
 layout_mode = 2
-texture = ExtResource("14_h8sgi")
+texture = ExtResource("14_0ywlb")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer3/HBoxContainer/TextureRect2"]
@@ -380,7 +387,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
-modulate = Color(0.775672, 0.546961, 0.1278, 1)
+modulate = Color(0.789805, 0.299495, 0.425025, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -388,15 +395,34 @@ size_flags_vertical = 4
 texture = ExtResource("15_q4rxg")
 expand_mode = 1
 
-[node name="EatLabel" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+[node name="SpikeLabel" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p6v0c")
+
+[node name="Control" type="Control" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+modulate = Color(0.775672, 0.546961, 0.1278, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_bex6v")
+expand_mode = 1
+
+[node name="StartLabel" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_p6v0c")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer3/HBoxContainer"]
+self_modulate = Color(0.427451, 0.713726, 0.737255, 0.470588)
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 2
-texture = ExtResource("16_krtgy")
+texture = ExtResource("14_0ywlb")
 expand_mode = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer3/HBoxContainer/TextureRect"]
@@ -424,7 +450,7 @@ texture = ExtResource("17_gwqbi")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="EatLabel" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect/HBoxContainer"]
+[node name="DeathLabel" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect/HBoxContainer"]
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_p6v0c")

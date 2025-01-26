@@ -14,5 +14,6 @@ func set_sound_volume(volume: float):
 func set_color(color : Color):
 	_color = color
 
+signal on_game_started
 signal on_player_fell(player : Player)
 signal on_star_collected(star : Node2D)
