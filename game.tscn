@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=25 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
@@ -18,7 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://wbpic8gw1nwb" path="res://assets/outline_guy.png" id="15_q4rxg"]
 [ext_resource type="Texture2D" uid="uid://1quepov0oong" path="res://assets/starfish_icon.png" id="17_bex6v"]
 [ext_resource type="Texture2D" uid="uid://r0fay6cllvhl" path="res://assets/death.png" id="17_gwqbi"]
+[ext_resource type="Texture2D" uid="uid://cw473k08fcaq2" path="res://flutter_icon.png" id="19_fsqdw"]
 [ext_resource type="PackedScene" uid="uid://3ti13ankw41" path="res://actors/bubble/bubble_main.tscn" id="19_uykvo"]
+[ext_resource type="PackedScene" uid="uid://2ipbjimjrdom" path="res://actors/oxygen/flutter_2.tscn" id="21_xv07y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7xyn"]
 
@@ -119,7 +121,6 @@ is_special = true
 position = Vector2(450, -1167)
 initial_size = 5.0
 size_override = null
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble2" instance=ExtResource("4_7rbnc")]
 position = Vector2(-184, 234)
@@ -133,7 +134,6 @@ position = Vector2(120, -193)
 [node name="Bubble25" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(450, -1167)
 initial_size = 5.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble25" instance=ExtResource("4_7rbnc")]
 position = Vector2(-184, 234)
@@ -147,7 +147,6 @@ position = Vector2(120, -193)
 [node name="Bubble8" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-927, -2822)
 initial_size = 8.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble8" instance=ExtResource("4_7rbnc")]
 position = Vector2(240, 489)
@@ -161,7 +160,6 @@ position = Vector2(523, -62)
 [node name="Bubble9" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-1711, -4481)
 initial_size = 6.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble9" instance=ExtResource("4_7rbnc")]
 
@@ -175,7 +173,6 @@ position = Vector2(180, -305)
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
 position = Vector2(-333, -5851)
 initial_size = 6.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble10" instance=ExtResource("4_7rbnc")]
 position = Vector2(93, -561)
@@ -183,7 +180,6 @@ position = Vector2(93, -561)
 [node name="Bubble12" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(102, -9280)
 initial_size = 6.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble12" instance=ExtResource("4_7rbnc")]
 position = Vector2(-62, 554)
@@ -192,19 +188,16 @@ position = Vector2(-62, 554)
 position = Vector2(-913, -10715)
 initial_size = 6.0
 size_override = null
-is_special = null
 
 [node name="Bubble13" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
 position = Vector2(119, -12351)
 initial_size = 9.0
-is_special = null
 
 [node name="Bubble11" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.978579, 0.825345, 0.639378, 1)
 position = Vector2(-25, -7527)
 initial_size = 3.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble11" instance=ExtResource("4_7rbnc")]
 position = Vector2(-143, -147)
@@ -219,7 +212,6 @@ position = Vector2(-181, 42)
 [node name="Bubble3" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(1514, -403)
 initial_size = 4.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble3" instance=ExtResource("4_7rbnc")]
 
@@ -233,13 +225,11 @@ position = Vector2(-28, 361)
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
 position = Vector2(754, -2394)
 initial_size = 4.0
-is_special = null
 
 [node name="Bubble5" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(1964, -3129)
 initial_size = 4.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble5" instance=ExtResource("4_7rbnc")]
 position = Vector2(103, 75)
@@ -248,13 +238,11 @@ position = Vector2(103, 75)
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(3388, -3435)
 initial_size = 4.0
-is_special = null
 
 [node name="Bubble6" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(4426, -2881)
 initial_size = 3.0
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble6" instance=ExtResource("4_7rbnc")]
 position = Vector2(53, 53)
@@ -263,13 +251,11 @@ position = Vector2(53, 53)
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(5449, -2494)
 initial_size = 2.0
-is_special = null
 
 [node name="Bubble15" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(6167, -2046)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble15" instance=ExtResource("4_7rbnc")]
 position = Vector2(39, 75)
@@ -278,7 +264,6 @@ position = Vector2(39, 75)
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(790, -11267)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble19" instance=ExtResource("4_7rbnc")]
 position = Vector2(-28, 59)
@@ -287,7 +272,6 @@ position = Vector2(-28, 59)
 self_modulate = Color(0.509804, 0.509804, 0.509804, 1)
 position = Vector2(1214, -11591)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble20" instance=ExtResource("4_7rbnc")]
 position = Vector2(53, -15)
@@ -295,7 +279,6 @@ position = Vector2(53, -15)
 [node name="Bubble21" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(1547, -12155)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble21" instance=ExtResource("4_7rbnc")]
 position = Vector2(-102, 34)
@@ -303,7 +286,6 @@ position = Vector2(-102, 34)
 [node name="Bubble22" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(1533, -12716)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble22" instance=ExtResource("4_7rbnc")]
 position = Vector2(34, 70)
@@ -311,7 +293,6 @@ position = Vector2(34, 70)
 [node name="Bubble23" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(1366, -13236)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble23" instance=ExtResource("4_7rbnc")]
 position = Vector2(-75, 9)
@@ -319,7 +300,6 @@ position = Vector2(-75, 9)
 [node name="Bubble24" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(949, -13632)
 initial_size = 1.5
-is_special = null
 
 [node name="Oxygen" parent="Bubbles/Bubble24" instance=ExtResource("4_7rbnc")]
 position = Vector2(6, 48)
@@ -327,12 +307,10 @@ position = Vector2(6, 48)
 [node name="Bubble16" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(6902, -1875)
 initial_size = 1.3
-is_special = null
 
 [node name="Bubble17" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.980392, 0.823529, 0.639216, 1)
 position = Vector2(7623, -1959)
-is_special = null
 
 [node name="Starfish" parent="Bubbles/Bubble17" instance=ExtResource("6_k2kd1")]
 
@@ -367,11 +345,12 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("9_52ig5")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." node_paths=PackedStringArray("star_count", "death_count", "spike_count")]
+[node name="CanvasLayer3" type="CanvasLayer" parent="." node_paths=PackedStringArray("star_count", "death_count", "spike_count", "flutter_count")]
 script = ExtResource("14_ohkxs")
 star_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/StartLabel")
 death_count = NodePath("HBoxContainer/TextureRect/HBoxContainer/DeathLabel")
 spike_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/SpikeLabel")
+flutter_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/FlitterLabe")
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
 offset_left = 77.0
@@ -443,6 +422,24 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_p6v0c")
 
+[node name="Control2" type="Control" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="F" type="TextureRect" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+modulate = Color(0.323146, 0.669362, 0.585478, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("19_fsqdw")
+expand_mode = 1
+
+[node name="FlitterLabe" type="Label" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_p6v0c")
+
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer3/HBoxContainer"]
 self_modulate = Color(0.427451, 0.713726, 0.737255, 0.470588)
 custom_minimum_size = Vector2(120, 120)
@@ -479,5 +476,14 @@ stretch_mode = 4
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_p6v0c")
+
+[node name="F2" parent="." instance=ExtResource("21_xv07y")]
+position = Vector2(360, 219)
+
+[node name="F3" parent="." instance=ExtResource("21_xv07y")]
+position = Vector2(220, 125)
+
+[node name="F4" parent="." instance=ExtResource("21_xv07y")]
+position = Vector2(43, 42)
 
 [connection signal="on_eaten" from="Player" to="RespawnManager" method="_on_player_on_eaten"]

@@ -158,7 +158,9 @@ func _on_area_2d_area_entered(area):
 	elif area.is_in_group("star"):
 		area.capture_me()
 		Bus.on_star_collected.emit(area)
-		
+	elif area.is_in_group("flutter"):
+		area.queue_free()
+		Bus.on_flutter_collected.emit(area)
 	elif area.is_in_group("respawn"):
 		Bus.on_player_fell.emit(self)
 

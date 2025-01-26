@@ -44,7 +44,7 @@ shape = SubResource("CircleShape2D_v374o")
 debug_color = Color(0.591466, 0.0974171, 0.375991, 0.784314)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.594294, 0.532395, 0, 1)
+modulate = Color(0.8865, 0.29268, 0.225569, 1)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_08rnk")
 animation = &"anemo"

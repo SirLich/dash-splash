@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://2ipbjimjrdom"]
+
+[ext_resource type="Texture2D" uid="uid://tg0rm2vt7dxd" path="res://assets/flutter/Flutter-1.png" id="1_w05m6"]
+[ext_resource type="Texture2D" uid="uid://cbp44wppeiyrh" path="res://assets/flutter/Flutter-2.png" id="2_im8qq"]
+[ext_resource type="Texture2D" uid="uid://dindyaemofvq6" path="res://assets/flutter/Flutter-3.png" id="3_cwllo"]
+[ext_resource type="Texture2D" uid="uid://cqxijoykcha62" path="res://assets/flutter/Flutter-4.png" id="4_auwmu"]
+[ext_resource type="Texture2D" uid="uid://dc5muwqbnc4lb" path="res://assets/flutter/Flutter-5.png" id="5_mj6nv"]
+[ext_resource type="Texture2D" uid="uid://ea1uhmbmo4w8" path="res://assets/flutter/Flutter-6.png" id="6_hw7r7"]
+[ext_resource type="Texture2D" uid="uid://c36jxt542hcnh" path="res://assets/flutter/Flutter-7.png" id="7_cabwy"]
+[ext_resource type="Texture2D" uid="uid://b7li0yg0grjyb" path="res://assets/flutter/Flutter-8.png" id="8_tllpb"]
+[ext_resource type="Texture2D" uid="uid://dyrqn8q4sqpti" path="res://assets/flutter/Flutter-9.png" id="9_cfpqv"]
+[ext_resource type="Texture2D" uid="uid://4lswldi2ri4t" path="res://assets/flutter/Flutter-10.png" id="10_v6s7p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v374o"]
+radius = 14.0357
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vw6vn"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"anemo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w05m6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_im8qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cwllo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_auwmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mj6nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hw7r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cabwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tllpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cfpqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v6s7p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="F2" type="Area2D" groups=["flutter"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["flutter"]]
+shape = SubResource("CircleShape2D_v374o")
+debug_color = Color(0.591466, 0.0974171, 0.375991, 0.784314)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.265021, 0.574747, 0.6575, 1)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_vw6vn")
+autoplay = "default"
