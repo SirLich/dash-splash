@@ -19,3 +19,4 @@ signal on_player_fell(player : Player)
 signal on_star_collected(star : Node2D)
 signal on_spike_collected(spike :Node2D)
 signal on_flutter_collected
+signal on_micro_collected

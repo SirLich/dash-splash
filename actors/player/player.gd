@@ -160,8 +160,14 @@ func _on_area_2d_area_entered(area):
 		area.capture_me()
 		Bus.on_star_collected.emit(area)
 	elif area.is_in_group("flutter"):
+		$Eat.play()
 		area.queue_free()
 		Bus.on_flutter_collected.emit(area)
+		
+	elif area.is_in_group("micro"):
+		$Eat.play()
+		area.queue_free()
+		Bus.on_micro_collected.emit(area)
 	elif area.is_in_group("respawn"):
 		$Death.play()
 		Bus.on_player_fell.emit(self)

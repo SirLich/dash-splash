@@ -1,0 +1,121 @@
+[gd_scene load_steps=25 format=3 uid="uid://dghiyf07n7d0t"]
+
+[ext_resource type="Texture2D" uid="uid://bad0p8bccf5wx" path="res://assets/microbe/Microbe-1.png" id="1_4d27m"]
+[ext_resource type="Texture2D" uid="uid://qjxlbkt5e2v6" path="res://assets/microbe/Microbe-2.png" id="2_p42nj"]
+[ext_resource type="Texture2D" uid="uid://wwsn6wcc6xpi" path="res://assets/microbe/Microbe-3.png" id="3_4tr18"]
+[ext_resource type="Texture2D" uid="uid://bxb6e6m1khm6r" path="res://assets/microbe/Microbe-4.png" id="4_3iyfk"]
+[ext_resource type="Texture2D" uid="uid://c4mjbaufxxem7" path="res://assets/microbe/Microbe-5.png" id="5_owttk"]
+[ext_resource type="Texture2D" uid="uid://cy3fqmi2giscx" path="res://assets/microbe/Microbe-6.png" id="6_3ennk"]
+[ext_resource type="Texture2D" uid="uid://c6f0abat3i8fs" path="res://assets/microbe/Microbe-7.png" id="7_i2tw2"]
+[ext_resource type="Texture2D" uid="uid://c4ggargbcqmpu" path="res://assets/microbe/Microbe-8.png" id="8_6mbap"]
+[ext_resource type="Texture2D" uid="uid://dsiviw4q3gi4b" path="res://assets/microbe/Microbe-9.png" id="9_r07n0"]
+[ext_resource type="Texture2D" uid="uid://uno4kclidwup" path="res://assets/microbe/Microbe-10.png" id="10_m5vq1"]
+[ext_resource type="Texture2D" uid="uid://bm1d80optsfjd" path="res://assets/microbe/Microbe-11.png" id="11_v3mgf"]
+[ext_resource type="Texture2D" uid="uid://dpgw40sgs006m" path="res://assets/microbe/Microbe-12.png" id="12_alsh1"]
+[ext_resource type="Texture2D" uid="uid://cno0t4hwok8pk" path="res://assets/microbe/Microbe-13.png" id="13_lb3yq"]
+[ext_resource type="Texture2D" uid="uid://cyt2nvfyrekv3" path="res://assets/microbe/Microbe-14.png" id="14_b6xh2"]
+[ext_resource type="Texture2D" uid="uid://6ocmxrkxyxc6" path="res://assets/microbe/Microbe-15.png" id="15_bey4n"]
+[ext_resource type="Texture2D" uid="uid://bairl8gabi8g4" path="res://assets/microbe/Microbe-16.png" id="16_ha4yp"]
+[ext_resource type="Texture2D" uid="uid://dufrvbkyuj1wt" path="res://assets/microbe/Microbe-17.png" id="17_5qbhi"]
+[ext_resource type="Texture2D" uid="uid://cwpmoxlo1j88r" path="res://assets/microbe/Microbe-18.png" id="18_d7qwq"]
+[ext_resource type="Texture2D" uid="uid://dsp343aw7qfk6" path="res://assets/microbe/Microbe-19.png" id="19_pukyx"]
+[ext_resource type="Texture2D" uid="uid://bhr18rxawl4dk" path="res://assets/microbe/Microbe-20.png" id="20_kmld4"]
+[ext_resource type="Texture2D" uid="uid://nrmf0nvp3onr" path="res://assets/microbe/Microbe-21.png" id="21_8tvwd"]
+[ext_resource type="Texture2D" uid="uid://djxpgc3m5kcas" path="res://assets/microbe/Microbe-22.png" id="22_61at0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nkqgg"]
+radius = 14.0357
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_16ibu"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"anemo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4d27m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p42nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4tr18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3iyfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_owttk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3ennk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i2tw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6mbap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r07n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m5vq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v3mgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_alsh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lb3yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b6xh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_bey4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ha4yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5qbhi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d7qwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pukyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_kmld4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8tvwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_61at0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Micro" type="Area2D" groups=["micro"]]
+modulate = Color(0.580392, 0.517647, 0.980392, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["flutter"]]
+shape = SubResource("CircleShape2D_nkqgg")
+debug_color = Color(0.591466, 0.0974171, 0.375991, 0.784314)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.265021, 0.574747, 0.6575, 1)
+position = Vector2(0, 3)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_16ibu")
+autoplay = "default"
+frame_progress = 0.11452
