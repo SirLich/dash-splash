@@ -1,12 +1,16 @@
 extends MarginContainer
 
 func _ready():
-	# Get the screen size
+	update_position()
+	
+func _process(_delta):
+	update_position()
+
+func update_position():
 	var screen_size = get_viewport_rect().size
-
-	# Calculate the position for the MarginContainer
-	var x = screen_size.x / 2  # Center horizontally
-	var y = screen_size.y * 0.75  # Position 75% from the top (adjust to your liking)
-
-	# Set the MarginContainer's position
-	position = Vector2(x, y)
+	
+	# Center horizontally
+	position.x = (screen_size.x - size.x) / 2
+	
+	# 300px above the bottom
+	position.y = screen_size.y - 300
