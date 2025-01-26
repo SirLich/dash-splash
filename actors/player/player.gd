@@ -119,7 +119,6 @@ func slither_movement(delta):
 		
 		var speed = velocity.length()
 		speed = clamp(speed, min_speed, max_speed)
-		$CanvasLayer/Label.text = str(global_rotation)
 		velocity = velocity.normalized() * speed
 		
 		# Update Transform
@@ -127,20 +126,6 @@ func slither_movement(delta):
 		global_position += velocity * delta
 		
 	else:
-		#global_rotation = velocity.normalized().angle() + 90
-		
-		# Wiggling
-		#var rotation_delta = global_rotation - last_rotation
-		#if (abs(rotation_delta) > wiggle_size):
-			#wiggles_per_second += 1
-			#last_rotation = global_rotation
-			#last_delta = rotation_delta
-		#
-		#wiggles_per_second -= wiggle_reduce_factor * delta
-		#wiggles_per_second = clamp(wiggles_per_second, 0 , max_wiggles)
-	#
-		#var wiggle_factor = float(wiggles_per_second) / float(max_wiggles)
-		#velocity += -global_transform.y * wiggle_acceleration * wiggle_factor * delta
 
 		velocity.y += gravity * delta
 		global_position += velocity * delta
@@ -167,6 +152,7 @@ func _on_area_2d_area_entered(area):
 		on_eaten.emit()
 		eaten += 1
 		#$CanvasLayer/HBoxContainer/EatLabel.text = str(eaten)
+		Bus.on_spike_collected.emit(area)
 		$Eat.play()
 		collect_oxygen(area)
 	elif area.is_in_group("star"):
