@@ -1,6 +1,7 @@
 @tool
 
 extends Node2D
+class_name Bubble
 
 @export var initial_size = 1.0 :
 	get:

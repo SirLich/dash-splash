@@ -15,6 +15,9 @@ func _draw():
 	var pos_scale = Vector2(0.02, 0.02)
 	
 	for child in bubble_container.get_children():
+		if not child is Bubble:
+			continue
+			
 		var size = child.initial_size * 2
 		var pos = child.global_position * pos_scale
 		
