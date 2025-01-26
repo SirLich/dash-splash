@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://da7jguys5xosy"]
+[gd_scene load_steps=9 format=3 uid="uid://da7jguys5xosy"]
 
 [ext_resource type="Script" path="res://actors/respawn_anchor/respawn_anchor.gd" id="1_7d7cy"]
-[ext_resource type="Texture2D" uid="uid://bbjo8v7km170l" path="res://assets/anemone/AnemoneIdle-1.png" id="2_tj1ic"]
 [ext_resource type="Texture2D" uid="uid://brjinasfw5qu0" path="res://assets/anemone/AnemoneIdle-2.png" id="3_8lxwx"]
 [ext_resource type="Texture2D" uid="uid://c8y3ni8bot7kd" path="res://assets/anemone/AnemoneIdle-3.png" id="4_nypbn"]
 [ext_resource type="Texture2D" uid="uid://3aj81p0d16pd" path="res://assets/anemone/AnemoneIdle-4.png" id="5_psph3"]
@@ -15,9 +14,6 @@ height = 184.0
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsga4"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_tj1ic")
-}, {
 "duration": 1.0,
 "texture": ExtResource("3_8lxwx")
 }, {

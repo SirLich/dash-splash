@@ -27,5 +27,8 @@ func _draw():
 		draw_circle(player.global_position * pos_scale, 5, player_color)
 
 
-	var cpos = respawn_container.get_active_anchor().global_position * pos_scale
-	draw_texture(respawn_texture, cpos, Color.HOT_PINK)
+	var c = Color("#ef9389")
+	c.a = 0.75
+	var active_child = respawn_container.get_active_anchor()
+	var cpos = (active_child.global_position  * pos_scale) + Vector2(-14, -14)
+	draw_texture(respawn_texture, cpos, c)
