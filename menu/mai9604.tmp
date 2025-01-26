@@ -1,23 +1,17 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1bwtl17un42a"]
+[gd_scene load_steps=14 format=3 uid="uid://d1bwtl17un42a"]
 
 [ext_resource type="Script" path="res://menu/button.gd" id="1_lfo8a"]
 [ext_resource type="PackedScene" uid="uid://81kxqvdo3igb" path="res://game.tscn" id="2_ngwdt"]
 [ext_resource type="Texture2D" uid="uid://2o4s7ccj7x2d" path="res://assets/menu/Play.png" id="5_mopjw"]
+[ext_resource type="FontFile" uid="uid://j66jiq4icg6d" path="res://brown-cake/Brown Cake.otf" id="6_wolyg"]
 [ext_resource type="Texture2D" uid="uid://b1l2hx4khaf0u" path="res://menu/Title.png" id="7_kuehy"]
 [ext_resource type="Texture2D" uid="uid://cye2tmfg32ahy" path="res://menu/KeyVisualCreatureWithBackground.png" id="8_fd6pe"]
 [ext_resource type="Script" path="res://menu/color_picker_button.gd" id="9_7t2o1"]
 [ext_resource type="Texture2D" uid="uid://bj0sasijl4y17" path="res://assets/menu/Exit.png" id="9_egj8d"]
-[ext_resource type="Texture2D" uid="uid://ch0xrwqlx8wh6" path="res://assets/menu/Music.png" id="10_8m0mm"]
 [ext_resource type="Script" path="res://menu/exit_button.gd" id="10_gil3f"]
-[ext_resource type="Texture2D" uid="uid://bk085vicvmer3" path="res://assets/menu/Sound.png" id="11_bg8kb"]
+[ext_resource type="Script" path="res://menu/sound_control.gd" id="10_qfrsn"]
+[ext_resource type="Script" path="res://menu/music_slider.gd" id="11_2tsac"]
 [ext_resource type="AudioStream" uid="uid://lnsarbnx7f0j" path="res://audio/music/msc_DashSplash_menu_v_1_loop.wav" id="12_2t0fm"]
-[ext_resource type="Texture2D" uid="uid://d2vn8ss65wb5o" path="res://assets/menu/Color.png" id="12_p1tsi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7ivt"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpftm"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e0kpt"]
 
 [sub_resource type="Theme" id="Theme_khmij"]
 
@@ -32,32 +26,57 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Play" type="Button" parent="."]
-modulate = Color(0.32549, 0.392157, 0.517647, 1)
+modulate = Color(0.435294, 0.568627, 0.713726, 1)
 layout_mode = 2
 offset_left = 352.0
 offset_top = 660.0
 offset_right = 1628.0
 offset_bottom = 998.0
 scale = Vector2(0.4, 0.4)
-theme_override_styles/hover = SubResource("StyleBoxEmpty_t7ivt")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_t7ivt")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_t7ivt")
 icon = ExtResource("5_mopjw")
 script = ExtResource("1_lfo8a")
 gamescene = ExtResource("2_ngwdt")
 
 [node name="ExitButton" type="Button" parent="."]
-modulate = Color(0.321569, 0.380392, 0.505882, 1)
 layout_mode = 2
 offset_left = 354.0
 offset_top = 848.0
 offset_right = 1630.0
 offset_bottom = 1186.0
 scale = Vector2(0.4, 0.4)
-theme_override_styles/hover = SubResource("StyleBoxTexture_jpftm")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_e0kpt")
 icon = ExtResource("9_egj8d")
 script = ExtResource("10_gil3f")
+
+[node name="Music" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 20.0
+offset_right = 2871.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.34902, 0.419608, 0.545098, 1)
+theme_override_fonts/font = ExtResource("6_wolyg")
+theme_override_font_sizes/font_size = 90
+text = "MUSIC"
+
+[node name="Sound" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1442.0
+offset_top = 246.0
+offset_right = 2865.0
+offset_bottom = 342.0
+theme_override_fonts/font = ExtResource("6_wolyg")
+theme_override_font_sizes/font_size = 90
+text = "SOUND"
+
+[node name="Color" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1450.0
+offset_top = 502.0
+offset_right = 2873.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("6_wolyg")
+theme_override_font_sizes/font_size = 90
+text = "COLOR"
 
 [node name="MenuTitle" type="TextureRect" parent="."]
 layout_mode = 1
@@ -87,11 +106,11 @@ script = ExtResource("9_7t2o1")
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="Control"]
 layout_mode = 0
-offset_left = 1304.0
-offset_top = 876.0
-offset_right = 1312.0
-offset_bottom = 884.0
-scale = Vector2(10.9729, 10.9729)
+offset_left = 1510.0
+offset_top = 632.0
+offset_right = 1518.0
+offset_bottom = 640.0
+scale = Vector2(19.8627, 19.8627)
 
 [node name="SoundControl" type="Control" parent="."]
 anchors_preset = 0
@@ -100,6 +119,7 @@ offset_top = 406.0
 offset_right = 142.0
 offset_bottom = 446.0
 scale = Vector2(0.0467827, 0.419388)
+script = ExtResource("10_qfrsn")
 
 [node name="MusicSlider" type="HSlider" parent="SoundControl"]
 layout_mode = 0
@@ -110,34 +130,7 @@ offset_bottom = -551.494
 theme = SubResource("Theme_khmij")
 max_value = 1.0
 step = 0.05
+script = ExtResource("11_2tsac")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_2t0fm")
-autoplay = true
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 912.0
-offset_top = 692.0
-offset_right = 2327.0
-offset_bottom = 1690.0
-scale = Vector2(0.25, 0.25)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 35
-
-[node name="Music" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-modulate = Color(0.32549, 0.392157, 0.517647, 1)
-layout_mode = 2
-texture = ExtResource("10_8m0mm")
-
-[node name="Sound" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-modulate = Color(0.32549, 0.392157, 0.517647, 1)
-layout_mode = 2
-texture = ExtResource("11_bg8kb")
-
-[node name="Color" type="TextureRect" parent="MarginContainer/VBoxContainer"]
-modulate = Color(0.32549, 0.392157, 0.517647, 1)
-layout_mode = 2
-texture = ExtResource("12_p1tsi")

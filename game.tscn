@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://mini_map.gd" id="4_lof0n"]
 [ext_resource type="Texture2D" uid="uid://c4yqsaxu11635" path="res://assets/an_16.png" id="5_bvtvg"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
-[ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
+[ext_resource type="PackedScene" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="PackedScene" uid="uid://jflflu8nki35" path="res://actors/organisms/starfish.tscn" id="6_k2kd1"]
 [ext_resource type="AudioStream" uid="uid://civk4iqct7wso" path="res://audio/music/msc_DashSplash_ingame_v_2_loop.wav" id="6_vlji6"]
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
