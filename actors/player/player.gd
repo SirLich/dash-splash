@@ -165,7 +165,7 @@ func _on_area_2d_area_entered(area):
 	elif area.is_in_group("oxygen"):
 		on_eaten.emit()
 		eaten += 1
-		$CanvasLayer/HBoxContainer/EatLabel.text = str(eaten)
+		#$CanvasLayer/HBoxContainer/EatLabel.text = str(eaten)
 		$Eat.play()
 		collect_oxygen(area)
 	elif area.is_in_group("respawn"):

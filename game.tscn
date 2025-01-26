@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=14 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
 [ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
+[ext_resource type="Script" path="res://mini_map.gd" id="4_lof0n"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
 [ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
@@ -18,14 +19,14 @@ font_size = 45
 
 [node name="Game" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="."]
 
-[node name="Parallax2D" type="Parallax2D" parent="Node2D"]
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
 scroll_offset = Vector2(4707, 1060)
 repeat_size = Vector2(1730.56, 1730.56)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D"]
 position = Vector2(-287, -611)
 scale = Vector2(0.422607, 0.422607)
 texture = ExtResource("5_wns0y")
@@ -45,6 +46,21 @@ position = Vector2(-300, -6337)
 
 [node name="RespawnAnchor4" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
 position = Vector2(135, -12359)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="MiniMap" type="Control" parent="CanvasLayer2" node_paths=PackedStringArray("bubble_container", "player")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 138.0
+offset_top = 443.0
+offset_right = 178.0
+offset_bottom = 483.0
+script = ExtResource("4_lof0n")
+bubble_container = NodePath("../../Bubbles")
+interesting_color = Color(0.820716, 0.265701, 0.385271, 1)
+player_color = Color(1, 1, 1, 1)
+player = NodePath("../../Player")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_eg1kh")
@@ -258,8 +274,6 @@ initial_size = 1.5
 
 [node name="Oxygen" parent="Bubbles/Bubble22" instance=ExtResource("4_7rbnc")]
 position = Vector2(34, 70)
-
-[node name="Oxygen" parent="Bubbles" instance=ExtResource("4_7rbnc")]
 
 [node name="Bubble23" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.507972, 0.507972, 0.507972, 1)
