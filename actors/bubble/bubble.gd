@@ -15,10 +15,10 @@ class_name Bubble
 @export var float_time = 3.0
 
 
-var default_scale_sprite = 0.06
+var default_scale_sprite = 1.0
 var default_scale_shape = 109
 
-@export var sprite : Sprite2D
+@export var node : Node2D
 @export var shape : CollisionShape2D
 
 func tween_up(direction):
@@ -32,15 +32,19 @@ func tween_up(direction):
 func set_size():
 	set_bubble_scale(initial_size)
 
+@export var highlight : AnimatedSprite2D
+
 func _ready():
+	node.rotation_degrees = randf_range(0.0, 360.0)
+	highlight.play(["anim_1", "anim_2"].pick_random())
 	set_bubble_scale(initial_size)
 	if !Engine.is_editor_hint():
 		tween_up(1.0)
 
 # 1.0 is normal, 2.0 is double, etc.
 func set_bubble_scale(size):
-	var new_sprite_scale = default_scale_sprite * size
-	sprite.scale = Vector2(new_sprite_scale, new_sprite_scale)
+	var new_node_scale = default_scale_sprite * size
+	node.scale = Vector2(new_node_scale, new_node_scale)
 	
 	shape.shape.radius = default_scale_shape * size
 	
