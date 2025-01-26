@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyoygs6bhgc2d"]
+
+[ext_resource type="PackedScene" uid="uid://dds1m1iivmr30" path="res://extra_bubbles.tscn" id="1_o64rd"]
+
+[node name="BubbleSpawner" type="Node2D"]
+
+[node name="ExtraBubbles" parent="." instance=ExtResource("1_o64rd")]

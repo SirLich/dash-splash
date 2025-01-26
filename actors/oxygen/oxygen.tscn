@@ -1,10 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://caxlfhtghffr4"]
+[gd_scene load_steps=8 format=3 uid="uid://caxlfhtghffr4"]
+
+[ext_resource type="Texture2D" uid="uid://d02myn8l73ctt" path="res://assets/food/Organismus1-1.png" id="1_ip0id"]
+[ext_resource type="Texture2D" uid="uid://cr7si7tni003m" path="res://assets/food/Organismus1-2.png" id="2_ifpi6"]
+[ext_resource type="Texture2D" uid="uid://dgwb61ck8io4r" path="res://assets/food/Organismus1-3.png" id="3_u7xk4"]
+[ext_resource type="Texture2D" uid="uid://ccb5s86e56ji7" path="res://assets/food/Organismus1-4.png" id="4_t73gn"]
+[ext_resource type="Texture2D" uid="uid://dx4nablltfomb" path="res://assets/food/Organismus1-5.png" id="5_hxumq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v374o"]
-radius = 7.0
+radius = 14.0357
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08rnk"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"anemo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ip0id")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ifpi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u7xk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t73gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hxumq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Oxygen" type="Area2D" groups=["oxygen"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v374o")
 debug_color = Color(0.591466, 0.0974171, 0.375991, 0.784314)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.594294, 0.532395, 0, 1)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_08rnk")
+animation = &"anemo"
+autoplay = "default"

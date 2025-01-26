@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhwb4gwxabhnu"]
+
+[ext_resource type="Script" path="res://assets/particle/bubble_particle.gd" id="1_8odmx"]
+[ext_resource type="Texture2D" uid="uid://bq5l58wydpwhq" path="res://assets/particle/TinyBubble_1.png" id="1_k3rf0"]
+
+[sub_resource type="Gradient" id="Gradient_ee8kh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w0on8"]
+gradient = SubResource("Gradient_ee8kh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_52cnt"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 5, 5)
+direction = Vector3(0, 1, 0)
+spread = 20.0
+flatness = 0.273
+initial_velocity_min = 93.07
+initial_velocity_max = 453.57
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -86.04
+linear_accel_max = -33.95
+damping_min = 23.529
+damping_max = 23.529
+scale_min = 0.1
+scale_max = 0.34
+scale_over_velocity_min = 17.13
+scale_over_velocity_max = 22.72
+color_ramp = SubResource("GradientTexture1D_w0on8")
+
+[node name="Particle" type="Node2D"]
+script = ExtResource("1_8odmx")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_52cnt")
+texture = ExtResource("1_k3rf0")
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="finished" from="GPUParticles2D" to="." method="_on_gpu_particles_2d_finished"]

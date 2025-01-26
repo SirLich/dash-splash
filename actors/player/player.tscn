@@ -1,16 +1,23 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8genfsw8ql8t"]
+[gd_scene load_steps=23 format=3 uid="uid://b8genfsw8ql8t"]
 
 [ext_resource type="Script" path="res://actors/player/player.gd" id="1_x5orn"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_5hj02"]
 [ext_resource type="PackedScene" uid="uid://doxlrg43cukn7" path="res://actors/body/body.tscn" id="2_dmcjy"]
 [ext_resource type="PackedScene" uid="uid://dtotaie31v4yv" path="res://actors/splash/splash.tscn" id="2_vtf1g"]
+[ext_resource type="PackedScene" uid="uid://bhwb4gwxabhnu" path="res://assets/particle/bubble_particle.tscn" id="2_yskx6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_nh811"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
-[ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head_light.png" id="5_00n8w"]
-[ext_resource type="Texture2D" uid="uid://cwdty444dp15y" path="res://assets/character/lgHeadUpperFin.png" id="8_vov4l"]
-[ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/lgHeadLowerFin.png" id="9_fiwmu"]
+[ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head.png" id="5_00n8w"]
+[ext_resource type="Texture2D" uid="uid://cwdty444dp15y" path="res://assets/character/fin_head_upper.png" id="8_vov4l"]
+[ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/fin_head_lower.png" id="9_fiwmu"]
 [ext_resource type="AudioStream" uid="uid://cvvfgs6qeovrv" path="res://audio/sfx/player/sfx_player_jumpIntoBubble_randomizer.tres" id="10_35p5m"]
+[ext_resource type="Texture2D" uid="uid://cjiaxwvcgocgi" path="res://assets/ui.png" id="11_mqt57"]
 [ext_resource type="AudioStream" uid="uid://dahcescqieerv" path="res://audio/sfx/player/sfx_player_jumpOutofBubble_randomizer.tres" id="11_n5vr5"]
+[ext_resource type="Texture2D" uid="uid://wbpic8gw1nwb" path="res://assets/outline_guy.png" id="12_25mwr"]
+[ext_resource type="AudioStream" uid="uid://cxdo0d4gesbtq" path="res://audio/sfx/player/sfx_player_eat.wav" id="12_urh2n"]
+[ext_resource type="Texture2D" uid="uid://cbkuoioy648tu" path="res://assets/ui2.png" id="13_jorwm"]
+[ext_resource type="AudioStream" uid="uid://dc7aq6n4v7twb" path="res://audio/sfx/player/sfx_player_jumpOutofBubble_fail.wav" id="14_nhs3l"]
+[ext_resource type="Texture2D" uid="uid://r0fay6cllvhl" path="res://assets/death.png" id="14_ybhdl"]
 
 [sub_resource type="Curve" id="Curve_jgdli"]
 _data = [Vector2(0.0114193, 0.509247), 0.0, 0.430471, 0, 0, Vector2(1, 0.0696644), -1.06206, 0.0, 0, 0]
@@ -25,15 +32,20 @@ ease = 2
 [sub_resource type="CircleShape2D" id="CircleShape2D_5o8gu"]
 radius = 27.0185
 
+[sub_resource type="LabelSettings" id="LabelSettings_q3anl"]
+line_spacing = 50.0
+font_size = 40
+
 [node name="Player" type="Node2D"]
 z_index = 1
 script = ExtResource("1_x5orn")
+particle_bubble = ExtResource("2_yskx6")
 splash_packed = ExtResource("2_vtf1g")
 body_scene = ExtResource("2_dmcjy")
-body_segments = 8
+body_segments = 10
 scale_curve = SubResource("Curve_jgdli")
 body_scale = 1.5
-snap_duration = 0.3
+snap_duration = 0.1
 follow_distance = 25
 
 [node name="Fins" type="Node2D" parent="."]
@@ -82,7 +94,7 @@ script = ExtResource("2_5hj02")
 script = ExtResource("3_nh811")
 tween_resource = SubResource("Resource_mosgt")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5o8gu")
@@ -95,11 +107,98 @@ offset_top = 54.0
 offset_right = 117.0
 offset_bottom = 77.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -185.0
+offset_right = 156.0
+offset_bottom = -85.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 2
+texture = ExtResource("11_mqt57")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_right = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/TextureRect2/HBoxContainer"]
+modulate = Color(0.775672, 0.546961, 0.1278, 1)
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_25mwr")
+expand_mode = 1
+
+[node name="EatLabel" type="Label" parent="CanvasLayer/HBoxContainer/TextureRect2/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_q3anl")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture = ExtResource("13_jorwm")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.5
+offset_top = -50.0
+offset_right = 63.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer/TextureRect/HBoxContainer"]
+modulate = Color(0.88085, 0.439628, 0.488137, 1)
+custom_minimum_size = Vector2(45, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("14_ybhdl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="EatLabel" type="Label" parent="CanvasLayer/HBoxContainer/TextureRect/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_q3anl")
+
 [node name="JumpIn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_35p5m")
 
 [node name="JumpOut" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_n5vr5")
+
+[node name="Eat" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_urh2n")
+
+[node name="FailOut" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_nhs3l")
+volume_db = 7.125
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

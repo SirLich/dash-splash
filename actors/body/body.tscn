@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://doxlrg43cukn7"]
 
 [ext_resource type="Script" path="res://actors/body/body.gd" id="1_64wd2"]
-[ext_resource type="Texture2D" uid="uid://cj21qamkouity" path="res://assets/character/body_round.png" id="2_aofav"]
-[ext_resource type="Texture2D" uid="uid://ba18s0qa61dh5" path="res://assets/character/lgFinSide1.png" id="3_51snu"]
+[ext_resource type="Texture2D" uid="uid://cj21qamkouity" path="res://assets/character/body.png" id="2_aofav"]
+[ext_resource type="Texture2D" uid="uid://ba18s0qa61dh5" path="res://assets/character/fin_side.png" id="3_51snu"]
 
 [node name="Body" type="Node2D"]
 script = ExtResource("1_64wd2")
@@ -12,16 +12,16 @@ scale = Vector2(0.155, 0.155)
 texture = ExtResource("2_aofav")
 
 [node name="LgFinSide1" type="Sprite2D" parent="."]
-position = Vector2(17, 1)
-rotation = -0.436332
+position = Vector2(22, 2)
+rotation = 0.211185
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_51snu")
 centered = false
 offset = Vector2(-98.11, -66.935)
 
 [node name="LgFinSide2" type="Sprite2D" parent="."]
-position = Vector2(-11, 2)
-rotation = 0.436332
+position = Vector2(-42, 1)
+rotation = 0.0174533
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("3_51snu")
 centered = false
