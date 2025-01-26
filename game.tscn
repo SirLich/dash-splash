@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
 [ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="PackedScene" uid="uid://jflflu8nki35" path="res://actors/organisms/starfish.tscn" id="6_k2kd1"]
+[ext_resource type="AudioStream" uid="uid://civk4iqct7wso" path="res://audio/music/msc_DashSplash_ingame_v_2_loop.wav" id="6_vlji6"]
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
-[ext_resource type="AudioStream" uid="uid://7yo4nw1v4wwf" path="res://audio/music/msc_DashSplash_ingame_v_1.wav" id="7_eg1kh"]
 [ext_resource type="PackedScene" uid="uid://da7jguys5xosy" path="res://actors/respawn_anchor/respawn_anchor.tscn" id="8_2n0a5"]
 [ext_resource type="Script" path="res://fade_manager.gd" id="9_52ig5"]
 [ext_resource type="Script" path="res://fps.gd" id="9_ayxs6"]
@@ -75,8 +75,8 @@ interesting_color = Color(0.820716, 0.265701, 0.385271, 1)
 player_color = Color(1, 1, 1, 1)
 player = NodePath("../../Player")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_eg1kh")
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vlji6")
 autoplay = true
 
 [node name="Nodes" type="Node2D" parent="."]
