@@ -1,6 +1,6 @@
 extends Control
 
-@onready var color_picker_button = $ColorPickerButton  # Reference to the ColorPickerButton
+@onready var color_picker_button = $ColorPickerButton 
 
 func _ready():
 	color_picker_button.color_changed.connect(_on_color_changed)
