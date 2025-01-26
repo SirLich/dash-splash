@@ -16,7 +16,7 @@ class_name Player
 @export var friction = 5
 
 @export var min_speed = 0
-@export var max_speed = 850
+@export var max_speed = 750
 
 @export var in_water_control = 100
 @export var exit_water_boost = 2

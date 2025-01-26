@@ -1,11 +1,11 @@
 extends Node2D
 class_name Body
 
-var snap_duration = 0.2
+var snap_duration = 0.1
 var following : Node2D
 var head : Node2D
 
-var follow_distance = 100
+var follow_distance = 30
 
 var tween : Tween
 func set_following(node : Node2D, snap: float, follow: float):
