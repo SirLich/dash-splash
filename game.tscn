@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://81kxqvdo3igb"]
+[gd_scene load_steps=23 format=3 uid="uid://81kxqvdo3igb"]
 
 [ext_resource type="PackedScene" uid="uid://b8genfsw8ql8t" path="res://actors/player/player.tscn" id="1_cvtyn"]
 [ext_resource type="PackedScene" uid="uid://dxc2ncxnjgxb" path="res://actors/bubble/bubble.tscn" id="2_d3yyg"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
 [ext_resource type="PackedScene" uid="uid://da7jguys5xosy" path="res://actors/respawn_anchor/respawn_anchor.tscn" id="8_2n0a5"]
 [ext_resource type="Script" path="res://fade_manager.gd" id="9_52ig5"]
-[ext_resource type="Script" path="res://fps.gd" id="9_ayxs6"]
 [ext_resource type="Texture2D" uid="uid://b5usifebf1jd" path="res://assets/ui/CounterBar-1.png" id="14_0ywlb"]
 [ext_resource type="Script" path="res://hud.gd" id="14_ohkxs"]
 [ext_resource type="Texture2D" uid="uid://wbpic8gw1nwb" path="res://assets/outline_guy.png" id="15_q4rxg"]
@@ -23,9 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://2ipbjimjrdom" path="res://actors/oxygen/flutter_2.tscn" id="21_xv07y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7xyn"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_12ux0"]
-font_size = 45
 
 [sub_resource type="LabelSettings" id="LabelSettings_p6v0c"]
 line_spacing = 50.0
@@ -60,6 +56,9 @@ position = Vector2(-300, -6337)
 
 [node name="RespawnAnchor4" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
 position = Vector2(135, -12359)
+
+[node name="RespawnAnchor5" parent="RespawnManager" instance=ExtResource("8_2n0a5")]
+position = Vector2(-911, -16569)
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
@@ -181,8 +180,6 @@ position = Vector2(-472, 61)
 
 [node name="Oxygen3" parent="Bubbles/Bubble37" instance=ExtResource("4_7rbnc")]
 position = Vector2(180, -305)
-
-[node name="RespawnAnchor" parent="Bubbles/Bubble37" instance=ExtResource("8_2n0a5")]
 
 [node name="Bubble10" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 modulate = Color(0.972549, 0.698039, 0.756863, 1)
@@ -431,16 +428,6 @@ shape = SubResource("WorldBoundaryShape2D_c7xyn")
 debug_color = Color(0.749957, 0.203733, 0.99719, 0.42)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1516.0
-offset_top = 90.0
-offset_right = 1632.0
-offset_bottom = 153.0
-text = "sdfsd
-"
-label_settings = SubResource("LabelSettings_12ux0")
-script = ExtResource("9_ayxs6")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
