@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://jflflu8nki35"]
+[gd_scene load_steps=15 format=3 uid="uid://jflflu8nki35"]
 
-[ext_resource type="Texture2D" uid="uid://bwg1onh7bbran" path="res://assets/starfish/Starfish-1.png" id="1_15uwq"]
-[ext_resource type="Texture2D" uid="uid://ix1ysfsur1kr" path="res://assets/starfish/Starfish-2.png" id="2_y85sy"]
-[ext_resource type="Texture2D" uid="uid://0s6yppo1d0gb" path="res://assets/starfish/Starfish-3.png" id="3_flwab"]
+[ext_resource type="Script" path="res://actors/organisms/starfish.gd" id="1_25fnl"]
+[ext_resource type="Texture2D" uid="uid://dpahwv1xqluvv" path="res://assets/orgs/Starfish-1.png" id="1_uc6sj"]
+[ext_resource type="Texture2D" uid="uid://p3kwt74yh07s" path="res://assets/orgs/Starfish-2.png" id="2_xio2q"]
+[ext_resource type="Texture2D" uid="uid://dl5mn6h6p5y5l" path="res://assets/orgs/Starfish-3.png" id="3_weyq8"]
 [ext_resource type="Texture2D" uid="uid://cx1l62xavlmc6" path="res://assets/starfish/Starfish-4.png" id="4_gq5a8"]
+[ext_resource type="Texture2D" uid="uid://c8sc8s2d2nsu" path="res://assets/orgs/Starfish-4.png" id="4_wkdoy"]
 [ext_resource type="Texture2D" uid="uid://w65hcn5eaffg" path="res://assets/starfish/StarfishExit-1.png" id="5_f5yqj"]
 [ext_resource type="Texture2D" uid="uid://bfb06gupk7t4n" path="res://assets/starfish/StarfishExit-2.png" id="6_5ii20"]
 [ext_resource type="Texture2D" uid="uid://bmk4ppgmpenay" path="res://assets/starfish/StarfishExit-3.png" id="7_ojhx5"]
@@ -17,14 +19,22 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_15uwq")
+"texture": ExtResource("1_uc6sj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_y85sy")
+"texture": ExtResource("2_xio2q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_flwab")
+"texture": ExtResource("3_weyq8")
 }, {
+"duration": 1.0,
+"texture": ExtResource("4_wkdoy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_gq5a8")
 }, {
@@ -46,16 +56,22 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_h27gy")
 }],
-"loop": true,
-"name": &"default",
+"loop": false,
+"name": &"grab",
 "speed": 10.0
 }]
 
-[node name="Starfish" type="Area2D"]
+[node name="Starfish" type="Area2D" node_paths=PackedStringArray("anim") groups=["star"]]
+modulate = Color(0.689365, 0.590392, 5.77569e-07, 1)
+script = ExtResource("1_25fnl")
+anim = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_31nuk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_c4bvb")
-frame_progress = 0.78312
+animation = &"grab"
+frame = 6
+frame_progress = 1.0
