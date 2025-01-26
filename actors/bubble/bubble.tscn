@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxc2ncxnjgxb"]
 
 [ext_resource type="Script" path="res://actors/bubble/bubble.gd" id="1_7ymmi"]
-[ext_resource type="Material" path="res://actors/bubble/bubble.tres" id="1_20mkj"]
+[ext_resource type="Material" uid="uid://dydub5gla5nmt" path="res://actors/bubble/bubble.tres" id="1_20mkj"]
 [ext_resource type="Texture2D" uid="uid://doj7sq25hm55a" path="res://assets/water_bubble.png" id="2_7c335"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qba6s"]

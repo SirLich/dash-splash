@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://caxlfhtghffr4" path="res://actors/oxygen/oxygen.tscn" id="4_7rbnc"]
 [ext_resource type="Script" path="res://mini_map.gd" id="4_lof0n"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
-[ext_resource type="PackedScene" path="res://blur.tscn" id="6_jsmc2"]
+[ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
 [ext_resource type="AudioStream" uid="uid://7yo4nw1v4wwf" path="res://audio/music/msc_DashSplash_ingame_v_1.wav" id="7_eg1kh"]
 [ext_resource type="PackedScene" uid="uid://da7jguys5xosy" path="res://actors/respawn_anchor/respawn_anchor.tscn" id="8_2n0a5"]
@@ -330,3 +330,5 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("9_52ig5")
+
+[connection signal="on_eaten" from="Player" to="RespawnManager" method="_on_player_on_eaten"]
