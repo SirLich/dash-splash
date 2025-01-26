@@ -15,9 +15,9 @@ dest_files=["res://.godot/imported/StartBubbleWaves-1.png-243bb2add12d6140f08211
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.7
+compress/lossy_quality=0.2
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0

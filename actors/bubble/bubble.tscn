@@ -139,9 +139,11 @@ radius = 109.0
 [node name="Bubble" type="Node2D" node_paths=PackedStringArray("node", "shape", "highlight")]
 material = ExtResource("1_20mkj")
 script = ExtResource("1_7ymmi")
+is_special = null
 node = NodePath("Scale")
 shape = NodePath("Area2D/CollisionShape2D")
 highlight = NodePath("Scale/Bubble_highlight")
+use_animations = null
 
 [node name="Scale" type="Node2D" parent="."]
 

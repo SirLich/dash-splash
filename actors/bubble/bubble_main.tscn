@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://3ti13ankw41"]
+
+[ext_resource type="Material" uid="uid://dydub5gla5nmt" path="res://actors/bubble/bubble.tres" id="1_m5887"]
+[ext_resource type="Script" path="res://actors/bubble/bubble.gd" id="2_hhrrn"]
+[ext_resource type="Texture2D" uid="uid://bm5qqp73alyis" path="res://assets/bubble_small/StartBubble-1.png" id="3_nxvfm"]
+[ext_resource type="Texture2D" uid="uid://clrps3upur27b" path="res://assets/bubble_small/StartBubbleHighlight-1.png" id="4_dx8wc"]
+[ext_resource type="Texture2D" uid="uid://58bfyesqp605" path="res://assets/bubble_small/StartBubbleWaves-1.png" id="5_nsb1w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qba6s"]
+resource_local_to_scene = true
+radius = 982.733
+
+[node name="Bubble" type="Node2D" node_paths=PackedStringArray("node", "shape", "highlight")]
+material = ExtResource("1_m5887")
+script = ExtResource("2_hhrrn")
+size_override = null
+is_special = null
+node = NodePath("Scale")
+shape = NodePath("Area2D/CollisionShape2D")
+highlight = NodePath("")
+use_animations = null
+
+[node name="Scale" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Scale"]
+texture = ExtResource("3_nxvfm")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Scale"]
+texture = ExtResource("4_dx8wc")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Scale"]
+texture = ExtResource("5_nsb1w")
+
+[node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qba6s")

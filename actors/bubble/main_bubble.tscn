@@ -1,0 +1,137 @@
+[gd_scene load_steps=25 format=3 uid="uid://dvq4pyhxryt3v"]
+
+[ext_resource type="Material" uid="uid://dydub5gla5nmt" path="res://actors/bubble/bubble.tres" id="1_1yjtp"]
+[ext_resource type="Script" path="res://actors/bubble/bubble.gd" id="2_5ytdg"]
+[ext_resource type="Texture2D" uid="uid://dlxd2vpwqy5p" path="res://assets/bubble_stuff/StartBubbleHighlight-1.png" id="3_1ogo1"]
+[ext_resource type="Texture2D" uid="uid://n1xltr0we555" path="res://assets/bubble_stuff/StartBubbleHighlight-2.png" id="4_k23ni"]
+[ext_resource type="Texture2D" uid="uid://ms0hdsfov0e4" path="res://assets/bubble_stuff/StartBubbleHighlight-3.png" id="5_gidei"]
+[ext_resource type="Texture2D" uid="uid://bm241f4yrl74f" path="res://assets/bubble_stuff/StartBubbleHighlight-4.png" id="6_vebjx"]
+[ext_resource type="Texture2D" uid="uid://b1cheoci1ndak" path="res://assets/bubble_stuff/StartBubbleHighlight-5.png" id="7_1gq8f"]
+[ext_resource type="Texture2D" uid="uid://d0yh0eb6ux5u7" path="res://assets/bubble_stuff/StartBubbleHighlight-6.png" id="8_w2u6q"]
+[ext_resource type="Texture2D" uid="uid://dlghkv5xfkgff" path="res://assets/bubble_stuff/StartBubbleWaves-1.png" id="9_3kwtr"]
+[ext_resource type="Texture2D" uid="uid://hsmotgdwi560" path="res://assets/bubble_stuff/StartBubbleWaves-2.png" id="10_extww"]
+[ext_resource type="Texture2D" uid="uid://d2rdpep0loa5w" path="res://assets/bubble_stuff/StartBubbleWaves-3.png" id="11_xyilc"]
+[ext_resource type="Texture2D" uid="uid://dswusni2npur6" path="res://assets/bubble_stuff/StartBubbleWaves-4.png" id="12_u22wo"]
+[ext_resource type="Texture2D" uid="uid://c5xq0numfm2fj" path="res://assets/bubble_stuff/StartBubbleWaves-5.png" id="13_u60uc"]
+[ext_resource type="Texture2D" uid="uid://dpitx14a6br7h" path="res://assets/bubble_stuff/StartBubbleWaves-6.png" id="14_410ak"]
+[ext_resource type="Texture2D" uid="uid://mq84orjbh3ij" path="res://assets/bubble_stuff/StartBubble-1.png" id="20_cb0ro"]
+[ext_resource type="Texture2D" uid="uid://cjiych4id6uig" path="res://assets/bubble_stuff/StartBubble-2.png" id="21_dv6gq"]
+[ext_resource type="Texture2D" uid="uid://csa8nms237i5j" path="res://assets/bubble_stuff/StartBubble-3.png" id="22_c0hwr"]
+[ext_resource type="Texture2D" uid="uid://b8x1tvvptc7p3" path="res://assets/bubble_stuff/StartBubble-4.png" id="23_lgx3l"]
+[ext_resource type="Texture2D" uid="uid://cyh856x06epf2" path="res://assets/bubble_stuff/StartBubble-5.png" id="24_lasyb"]
+[ext_resource type="Texture2D" uid="uid://cv63tlmtfdb0v" path="res://assets/bubble_stuff/StartBubble-6.png" id="25_f0l14"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k7wob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ogo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k23ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gidei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vebjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1gq8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w2u6q")
+}],
+"loop": true,
+"name": &"anim_1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06k8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3kwtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_extww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xyilc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_u22wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_u60uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_410ak")
+}],
+"loop": true,
+"name": &"anim_1",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_md6cd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_cb0ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dv6gq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_c0hwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_lgx3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lasyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f0l14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qibpb"]
+resource_local_to_scene = true
+radius = 109.0
+
+[node name="Bubble" type="Node2D" node_paths=PackedStringArray("node", "shape", "highlight")]
+material = ExtResource("1_1yjtp")
+script = ExtResource("2_5ytdg")
+size_override = null
+is_special = null
+node = NodePath("Scale")
+shape = NodePath("Area2D/CollisionShape2D")
+highlight = NodePath("Scale/Bubble_highlight")
+use_animations = null
+
+[node name="Scale" type="Node2D" parent="."]
+rotation = 0.854334
+
+[node name="Bubble_highlight" type="AnimatedSprite2D" parent="Scale"]
+sprite_frames = SubResource("SpriteFrames_k7wob")
+animation = &"anim_1"
+autoplay = "anim_1"
+
+[node name="Bubble_waves" type="AnimatedSprite2D" parent="Scale"]
+sprite_frames = SubResource("SpriteFrames_06k8p")
+animation = &"anim_1"
+autoplay = "anim_1"
+
+[node name="Bubble_Background" type="AnimatedSprite2D" parent="Scale"]
+sprite_frames = SubResource("SpriteFrames_md6cd")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="." groups=["bubble"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_qibpb")

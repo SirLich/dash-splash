@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsj1lapx826s3"
-path="res://.godot/imported/StartBubbleHighlight-2(1).png-04f317e48a967becdcee35deca5089eb.ctex"
+uid="uid://58bfyesqp605"
+path="res://.godot/imported/StartBubbleWaves-1.png-62139e5c8cd83d9764a81493f4bf55b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubble_stuff/StartBubbleHighlight-2(1).png"
-dest_files=["res://.godot/imported/StartBubbleHighlight-2(1).png-04f317e48a967becdcee35deca5089eb.ctex"]
+source_file="res://assets/bubble_small/StartBubbleWaves-1.png"
+dest_files=["res://.godot/imported/StartBubbleWaves-1.png-62139e5c8cd83d9764a81493f4bf55b6.ctex"]
 
 [params]
 

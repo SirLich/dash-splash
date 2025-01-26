@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xgjgqsngq7e7"
-path="res://.godot/imported/StartBubbleHighlight-3(1).png-b49c2fc17ce4d89d15e475842cbd28e1.ctex"
+uid="uid://bm5qqp73alyis"
+path="res://.godot/imported/StartBubble-1.png-852d59a349c2ac41a32ed9a6eb9ff18b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bubble_stuff/StartBubbleHighlight-3(1).png"
-dest_files=["res://.godot/imported/StartBubbleHighlight-3(1).png-b49c2fc17ce4d89d15e475842cbd28e1.ctex"]
+source_file="res://assets/bubble_small/StartBubble-1.png"
+dest_files=["res://.godot/imported/StartBubble-1.png-852d59a349c2ac41a32ed9a6eb9ff18b.ctex"]
 
 [params]
 
