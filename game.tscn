@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://mini_map.gd" id="4_lof0n"]
 [ext_resource type="Texture2D" uid="uid://c4yqsaxu11635" path="res://assets/an_16.png" id="5_bvtvg"]
 [ext_resource type="Texture2D" uid="uid://cdx21wnrchpnv" path="res://assets/BackgroundTile.png" id="5_wns0y"]
-[ext_resource type="PackedScene" path="res://blur.tscn" id="6_jsmc2"]
+[ext_resource type="PackedScene" uid="uid://bihopv8crfufw" path="res://blur.tscn" id="6_jsmc2"]
 [ext_resource type="PackedScene" uid="uid://jflflu8nki35" path="res://actors/organisms/starfish.tscn" id="6_k2kd1"]
 [ext_resource type="AudioStream" uid="uid://civk4iqct7wso" path="res://audio/music/msc_DashSplash_ingame_v_2_loop.wav" id="6_vlji6"]
 [ext_resource type="PackedScene" uid="uid://cm0erntl7bfg6" path="res://actors/respawn_manager/respawn_manager.tscn" id="7_4dtql"]
@@ -22,8 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://3ti13ankw41" path="res://actors/bubble/bubble_main.tscn" id="19_uykvo"]
 [ext_resource type="Texture2D" uid="uid://xgv3k7gfsjk6" path="res://microbe_icon.png" id="20_xk1s1"]
 [ext_resource type="PackedScene" uid="uid://2ipbjimjrdom" path="res://actors/oxygen/flutter_2.tscn" id="21_xv07y"]
-[ext_resource type="PackedScene" path="res://actors/bubble/bubble_main.tscn" id="19_uykvo"]
-[ext_resource type="PackedScene" path="res://actors/oxygen/flutter_2.tscn" id="21_xv07y"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c7xyn"]
 
@@ -539,12 +537,13 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0)
 script = ExtResource("9_52ig5")
 
-[node name="CanvasLayer3" type="CanvasLayer" parent="." node_paths=PackedStringArray("star_count", "death_count", "spike_count", "flutter_count")]
+[node name="CanvasLayer3" type="CanvasLayer" parent="." node_paths=PackedStringArray("star_count", "death_count", "spike_count", "flutter_count", "micro_count")]
 script = ExtResource("14_ohkxs")
 star_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/StartLabel")
 death_count = NodePath("HBoxContainer/TextureRect/HBoxContainer/DeathLabel")
 spike_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/SpikeLabel")
 flutter_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/FlitterLabe")
+micro_count = NodePath("HBoxContainer/TextureRect2/HBoxContainer/MicrobeLaberl")
 
 [node name="Label" type="Label" parent="CanvasLayer3"]
 offset_left = 77.0
@@ -639,7 +638,7 @@ custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="MicrobeIcon" type="TextureRect" parent="CanvasLayer3/HBoxContainer/TextureRect2/HBoxContainer"]
-modulate = Color(0.578482, 0.515837, 0.98011, 1)
+modulate = Color(0.580392, 0.517647, 0.980392, 1)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
