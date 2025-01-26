@@ -3,8 +3,6 @@ class_name RespawnAnchor
 
 @export var deactive_color : Color
 @export var active_color : Color
-
-@export var glimmer : Node2D
 @export var inside : Node2D
 
 @export var is_active = false
@@ -16,10 +14,8 @@ func set_active(new_active):
 	is_active = new_active
 	
 	if is_active:
-		glimmer.visible = true
 		inside.modulate = active_color
 	else:
-		glimmer.visible = false
 		inside.modulate = deactive_color
 
 func _on_area_2d_area_entered(area):

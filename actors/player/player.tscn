@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bhwb4gwxabhnu" path="res://assets/particle/bubble_particle.tscn" id="2_yskx6"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_nh811"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_uamp4"]
-[ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head_light.png" id="5_00n8w"]
-[ext_resource type="Texture2D" uid="uid://cwdty444dp15y" path="res://assets/character/lgHeadUpperFin.png" id="8_vov4l"]
-[ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/lgHeadLowerFin.png" id="9_fiwmu"]
+[ext_resource type="Texture2D" uid="uid://dyk805qu2uvxw" path="res://assets/character/head.png" id="5_00n8w"]
+[ext_resource type="Texture2D" uid="uid://cwdty444dp15y" path="res://assets/character/fin_head_upper.png" id="8_vov4l"]
+[ext_resource type="Texture2D" uid="uid://b8tcrdahf10ll" path="res://assets/character/fin_head_lower.png" id="9_fiwmu"]
 [ext_resource type="AudioStream" uid="uid://cvvfgs6qeovrv" path="res://audio/sfx/player/sfx_player_jumpIntoBubble_randomizer.tres" id="10_35p5m"]
 [ext_resource type="Texture2D" uid="uid://cjiaxwvcgocgi" path="res://assets/ui.png" id="11_mqt57"]
 [ext_resource type="AudioStream" uid="uid://dahcescqieerv" path="res://audio/sfx/player/sfx_player_jumpOutofBubble_randomizer.tres" id="11_n5vr5"]
@@ -42,10 +42,10 @@ script = ExtResource("1_x5orn")
 particle_bubble = ExtResource("2_yskx6")
 splash_packed = ExtResource("2_vtf1g")
 body_scene = ExtResource("2_dmcjy")
-body_segments = 8
+body_segments = 10
 scale_curve = SubResource("Curve_jgdli")
 body_scale = 1.5
-snap_duration = 0.3
+snap_duration = 0.1
 follow_distance = 25
 
 [node name="Fins" type="Node2D" parent="."]

@@ -7,6 +7,9 @@ var head : Node2D
 
 var follow_distance = 30
 
+func _ready():
+	modulate = Bus._color
+	
 var tween : Tween
 func set_following(node : Node2D, snap: float, follow: float):
 	following = node
@@ -24,7 +27,7 @@ func _process(delta):
 	var speed_ratio = current_speed / head.max_speed
 	
 	speed_ratio = clamp(speed_ratio, 0.0, 1.0)
-	var rotation_amount = lerp(200, 0, speed_ratio)
+	var rotation_amount = lerp(20, -30, speed_ratio)
 	$LgFinSide1.rotation_degrees = speed_ratio * -rotation_amount
 	$LgFinSide2.rotation_degrees = speed_ratio * rotation_amount
 	

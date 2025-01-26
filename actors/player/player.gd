@@ -58,6 +58,7 @@ func get_turn_speed():
 	return air_rotation_speed
 	
 func _ready():
+	modulate = Bus._color
 	var last_actor = self
 	for i in body_segments:
 		var new_body = body_scene.instantiate() as Body

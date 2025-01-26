@@ -1,7 +1,7 @@
 extends Node
 
 
-var _color = Color.SEA_GREEN
+var _color = Color("#aabb6c")
 var _music_volume = 100.0
 var _sound_volume = 100.0
 
