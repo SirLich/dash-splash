@@ -10,7 +10,12 @@ class_name RespawnAnchor
 func _ready():
 	if is_active:
 		inside.modulate = active_color
+		$Graphics/AnimatedSprite2D.play("opening")
+		await $Graphics/AnimatedSprite2D.animation_finished
+		$Graphics/AnimatedSprite2D.play("open")
+
 	else:
+		$Graphics/AnimatedSprite2D.play("default")
 		inside.modulate = deactive_color
 		
 func set_active(new_active):
@@ -19,8 +24,15 @@ func set_active(new_active):
 	
 	if is_active:
 		inside.modulate = active_color
+		$Graphics/AnimatedSprite2D.play("opening")
+		await $Graphics/AnimatedSprite2D.animation_finished
+		$Graphics/AnimatedSprite2D.play("open")
+
 	else:
+		$Graphics/AnimatedSprite2D.play("default")
 		inside.modulate = deactive_color
+		
+	
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("player"):
