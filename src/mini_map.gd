@@ -8,6 +8,9 @@ extends Control
 @export var player_color : Color
 @export var player : Node2D
 
+@export var star_texture : Texture
+@export var star_color : Color
+
 func _process(delta):
 	queue_redraw()
 	
@@ -31,7 +34,10 @@ func _draw():
 			draw_circle(pos, size, Color.BLACK)
 			
 		draw_circle(player.global_position * pos_scale, 5, player_color)
-
+	
+	for star in get_tree().get_nodes_in_group("star"):
+		var star_pos = (star.global_position  * pos_scale) + Vector2(-12, -12)
+		draw_texture(star_texture, star_pos, star_color)
 
 	var c = Color("#ef9389")
 	c.a = 0.75
