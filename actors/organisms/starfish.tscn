@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://1l8xmc7g5fth" path="res://assets/starfish/StarfishExit-6.png" id="10_h27gy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_31nuk"]
+radius = 60.6712
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c4bvb"]
 animations = [{

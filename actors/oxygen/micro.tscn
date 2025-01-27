@@ -24,15 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://djxpgc3m5kcas" path="res://assets/microbe/Microbe-22.png" id="22_61at0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nkqgg"]
-radius = 14.0357
+radius = 24.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_16ibu"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"anemo",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_4d27m")
@@ -117,4 +112,3 @@ position = Vector2(0, 3)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_16ibu")
 autoplay = "default"
-frame_progress = 0.11452

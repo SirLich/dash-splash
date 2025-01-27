@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cvwxwh0iuyk2a" path="res://assets/anim_2/AnemoneActivating-4.png" id="14_wrd4y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ae8bq"]
-radius = 92.0
-height = 184.0
+radius = 108.0
+height = 240.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsga4"]
 animations = [{
