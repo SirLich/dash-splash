@@ -1,6 +1,6 @@
 # Dash Splash
 
-This game was created for [Global Game Jam 2025](https://globalgamejam.org/) (Munich) in the [Godot Game Engine](https://godotengine.org/)
+This game was created for [Global Game Jam 2025](https://globalgamejam.org/games/2025/dash-splash-8) (Munich) in the [Godot Game Engine](https://godotengine.org/)
 
 ## Contributors
 
@@ -13,8 +13,12 @@ This game was created for [Global Game Jam 2025](https://globalgamejam.org/) (Mu
 
 ## 1.1.0
 
-Post-jam, containing a few critical fixes:
-	-  
+Post-jam, containing a few critical fixes and improvements:
+	- Fixed animation issues when moving fast
+	- Fixed overlapping bubble in map
+	- Added stars to the minimap, to help you track progress
+	- Increased size of colliders on collectables
+	- Removed some unused files to keep the export size tidy
 	
 ## 1.0.0
 
