@@ -43,6 +43,8 @@ body_scale = 1.5
 snap_duration = 0.1
 follow_distance = 25
 
+[node name="Parts" type="Node2D" parent="."]
+
 [node name="Fins" type="Node2D" parent="."]
 position = Vector2(3.8147e-06, 3.8147e-06)
 scale = Vector2(0.75, 0.75)

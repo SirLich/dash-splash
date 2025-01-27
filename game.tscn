@@ -141,19 +141,6 @@ position = Vector2(-350, -241)
 [node name="Oxygen3" parent="Bubbles/Bubble2" instance=ExtResource("4_7rbnc")]
 position = Vector2(120, -193)
 
-[node name="Bubble25" parent="Bubbles" instance=ExtResource("2_d3yyg")]
-position = Vector2(450, -1167)
-initial_size = 5.0
-
-[node name="Oxygen" parent="Bubbles/Bubble25" instance=ExtResource("4_7rbnc")]
-position = Vector2(-184, 234)
-
-[node name="Oxygen2" parent="Bubbles/Bubble25" instance=ExtResource("4_7rbnc")]
-position = Vector2(-350, -241)
-
-[node name="Oxygen3" parent="Bubbles/Bubble25" instance=ExtResource("4_7rbnc")]
-position = Vector2(120, -193)
-
 [node name="Bubble8" parent="Bubbles" instance=ExtResource("2_d3yyg")]
 position = Vector2(-927, -2822)
 initial_size = 8.0
@@ -518,6 +505,8 @@ position = Vector2(-7377, -3189)
 
 [node name="Player" parent="." instance=ExtResource("1_cvtyn")]
 position = Vector2(988, 789)
+
+[node name="Parts" type="Node2D" parent="."]
 
 [node name="RespawnArea" type="Area2D" parent="." groups=["respawn"]]
 

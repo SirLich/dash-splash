@@ -52,10 +52,14 @@ var wiggle_size = 0.2
 var turn_speed = 3.0
 var air_turn_speed = 40
 
+func set_follow_me(node: Node2D):
+	$RemoteTransform2D.remote_path = node.get_path()
+	
 func get_turn_speed():
 	if is_in_bubble:
 		return rotation_speed
 	return air_rotation_speed
+	
 	
 func _ready():
 	modulate = Bus._color
@@ -67,7 +71,9 @@ func _ready():
 		var scale_ratio =  float(i) / float(body_segments)
 		new_body.scale = new_body.scale * body_scale * scale_curve.sample(scale_ratio)
 		last_actor = new_body
-		add_sibling.call_deferred(new_body)
+		
+		get_parent().get_child(get_index() + 1).add_child.call_deferred(new_body)
+		
 	
 func _process(delta):
 	var current_speed = velocity.length()
