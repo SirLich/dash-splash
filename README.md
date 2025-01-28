@@ -5,8 +5,8 @@ This game was created for [Global Game Jam 2025](https://globalgamejam.org/games
 ## Contributors
 
 1. Programming/Design: [SirLich](https://sirlich.dev/)
-2. Art: Neon Flores
-3. Music/SFX: [philsharmony](https://github.com/RenTenTen) 
+2. Art: [Neon Flores](https://www.neonflores.com/)
+3. Music/SFX: [philsharmony](https://github.com/PhilsHarmony)  
 4. Programming: [Long Phi](https://github.com/MUCPhamPhiL)
 
 # Release Notes
@@ -14,11 +14,11 @@ This game was created for [Global Game Jam 2025](https://globalgamejam.org/games
 ## 1.1.0
 
 Post-jam, containing a few critical fixes and improvements:
-	- Fixed animation issues when moving fast
-	- Fixed overlapping bubble in map
-	- Added stars to the minimap, to help you track progress
-	- Increased size of colliders on collectables
-	- Removed some unused files to keep the export size tidy
+ - Fixed animation issues when moving fast
+ - Fixed overlapping bubble in map
+ - Added stars to the minimap, to help you track progress
+ - Increased size of colliders on collectables
+ - Removed some unused files to keep the export size tidy
 	
 ## 1.0.0
 
