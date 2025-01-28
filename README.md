@@ -2,6 +2,11 @@
 
 This game was created for [Global Game Jam 2025](https://globalgamejam.org/games/2025/dash-splash-8) (Munich) in the [Godot Game Engine](https://godotengine.org/)
 
+You can play the game on [itch.io](https://sirlich.itch.io/dash-splash).
+
+![alt text](media/menu.png)
+![alt text](media/game.png)
+
 ## Contributors
 
 1. Programming/Design: [SirLich](https://sirlich.dev/)
